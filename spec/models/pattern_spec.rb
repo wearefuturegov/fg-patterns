@@ -2,6 +2,14 @@ require 'rails_helper'
 
 RSpec.describe Pattern, type: :model do
 
+  before(:all) do
+    Rails.application.load_seed
+  end
+
+  it 'loads seed data' do
+    expect(Pattern.count).to eq(2)
+  end
+
   it 'is invalid without a name' do
     pattern = Pattern.new
     expect(pattern).to be_invalid

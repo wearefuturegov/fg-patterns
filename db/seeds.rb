@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+patterns = [
+  ["Check something", "Lorem ipsum dolor amet poke organic snackwave readymade direct trade hot chicken tbh williamsburg authentic tote bag vape vexillologist cliche fam selfies. Brunch franzen cray, four loko live-edge kitsch hoodie chia. "],
+  ["Register for something", "Lorem ipsum dolor amet poke organic snackwave readymade direct trade hot chicken tbh williamsburg authentic tote bag vape vexillologist cliche fam selfies. Brunch franzen cray, four loko live-edge kitsch hoodie chia. "]
+]
+patterns.each do |name, description|
+  Pattern.create(name: name, description: description)
+end
