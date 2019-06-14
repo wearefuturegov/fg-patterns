@@ -7,7 +7,7 @@ RSpec.describe Pattern, type: :model do
   end
 
   it 'loads seed data' do
-    expect(Pattern.count).to eq(2)
+    expect(Pattern.count).to eq(7)
   end
 
   it 'is invalid without a name' do
