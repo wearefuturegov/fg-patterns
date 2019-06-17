@@ -4,6 +4,7 @@ RSpec.describe "View Patterns", type: :request do
     expect(response).to be_successful
     Pattern.all.each do |pattern|
       expect(response.body).to include(pattern.name)
+      expect(response.body).to have_link(pattern.name, href: patterns_path(selected: pattern.id))
     end
   end
 
