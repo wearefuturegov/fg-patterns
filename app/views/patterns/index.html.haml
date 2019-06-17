@@ -1,3 +1,22 @@
 - @patterns.each do |pattern|
-  .div
+  %div
     = pattern.name
+
+%div
+  - if @selected_pattern
+    = @selected_pattern.name
+    pattern
+    = @selected_pattern.description
+  - else
+    All patterns
+    Kitsch banjo truffaut asymmetrical fingerstache brooklyn. Green juice artisan DIY wayfarers post-ironic fixie. Coloring book keytar vape kale chips trust fund. Artisan ennui food truck pinterest wolf art party master cleanse schlitz pabst. Vinyl fanny pack PBR&B activated charcoal shoreditch before they sold out venmo beard literally pickled. Cray salvia poke normcore vinyl XOXO. Crucifix stumptown celiac 3 wolf moon.
+
+%div
+  %table
+    - @services.each do |service|
+      %tr
+        %td
+          = service.name
+        %td
+          - service.patterns.each do |service_pattern|
+            = service_pattern.name
