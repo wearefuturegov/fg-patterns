@@ -10,16 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_12_145508) do
+ActiveRecord::Schema.define(version: 2019_06_17_134224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "life_events", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "patterns", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "patterns_services", id: false, force: :cascade do |t|
+    t.bigint "service_id", null: false
+    t.bigint "pattern_id", null: false
+    t.index ["service_id", "pattern_id"], name: "index_patterns_services_on_service_id_and_pattern_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "name"
+    t.text "sub_services"
   end
 
 end
