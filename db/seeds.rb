@@ -1,3 +1,8 @@
+require 'csv'
+
+#patterns = File.read(Rails.root.join('lib', 'seeds', 'patterns'))
+
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -7,28 +12,84 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 patterns = [
-  [
-    "Check something",
-    "Lorem ipsum dolor amet poke organic snackwave readymade direct trade hot chicken tbh williamsburg authentic tote bag vape vexillologist cliche fam selfies. Brunch franzen cray, four loko live-edge kitsch hoodie chia. "],
-  [
-    "Register for something",
-    "Lorem ipsum dolor amet poke organic snackwave readymade direct trade hot chicken tbh williamsburg authentic tote bag vape vexillologist cliche fam selfies. Brunch franzen cray, four loko live-edge kitsch hoodie chia. "],
-  [
-    "Tell something",
-    "Lorem ipsum dolor amet poke organic snackwave readymade direct trade hot chicken tbh williamsburg authentic tote bag vape vexillologist cliche fam selfies. Brunch franzen cray, four loko live-edge kitsch hoodie chia. "],
-  [
-    "Request something",
-    "Lorem ipsum dolor amet poke organic snackwave readymade direct trade hot chicken tbh williamsburg authentic tote bag vape vexillologist cliche fam selfies. Brunch franzen cray, four loko live-edge kitsch hoodie chia. "],
-  [
-    "Apply for something",
-    "Lorem ipsum dolor amet poke organic snackwave readymade direct trade hot chicken tbh williamsburg authentic tote bag vape vexillologist cliche fam selfies. Brunch franzen cray, four loko live-edge kitsch hoodie chia. "],
-  [
-    "Book something",
-    "Lorem ipsum dolor amet poke organic snackwave readymade direct trade hot chicken tbh williamsburg authentic tote bag vape vexillologist cliche fam selfies. Brunch franzen cray, four loko live-edge kitsch hoodie chia. "],
-  [
-    "Update something",
-    "Lorem ipsum dolor amet poke organic snackwave readymade direct trade hot chicken tbh williamsburg authentic tote bag vape vexillologist cliche fam selfies. Brunch franzen cray, four loko live-edge kitsch hoodie chia. "]
+  {
+    name: "Check something",
+    description: "Lorem ipsum dolor amet poke"
+  },
+  {
+    name: "Register for something",
+    description: "organic snackwave readymade direct"
+  },
+  {
+    name: "Tell something",
+    description: "trade hot chicken tbh williamsburg "
+  },
+  {
+    name: "Request something",
+    description: "authentic tote bag vape vexillologist "
+  },
+  {
+    name: "Apply for something",
+    description: "cliche fam selfies. Brunch franzen cray"
+  },
+  {
+    name: "Book something",
+    description: "four loko live-edge kitsch hoodie chia."
+  },
+  {
+    name: "Update something",
+    description: "ipsum poke organic cliche fam kitsch. "
+  }
 ]
-patterns.each do |name, description|
-  Pattern.create(name: name, description: description)
+patterns.each do |pattern|
+
+  # Create pattern
+  new_pattern = Pattern.create(pattern)
+
+  # Construct path for pattern csv file
+  file_name = new_pattern.name.split(" ")[0].downcase
+  pattern_csv_path = Rails.root.join('lib', 'seeds', 'patterns', file_name + '.csv')
+
+  if File.exist?(pattern_csv_path)
+    # Read CSV from file
+    csv = File.read(pattern_csv_path)
+    pattern_csv = CSV.parse(csv, headers: true)
+
+    # Iterate through services for that pattern
+    pattern_csv.each do |row|
+      # Create new service unless it already exists
+      unless Service.where(name: row[0]).count > 0
+        service = Service.new
+        service.name = row[0]
+        service.sub_services = row[1]
+        if row[2]
+          life_event_names = row[2].split(', ')
+          life_events = []
+          life_event_names.each  do |life_event_name|
+            life_events << LifeEvent.find_or_create_by(name: life_event_name)
+          end
+
+          service.life_events = LifeEvent.where(name: life_events)
+        end
+        service.patterns << new_pattern
+        service.save
+      end
+    end
+  end
+
 end
+
+# services = [
+#   "Register a birth",
+#   "Register a death",
+#   "Register a stillbirth",
+#   "Plan a naming ceremony / Venue",
+#   "Plan a naming ceremony / Registrar"
+# ]
+
+# [
+#   id: ,
+#   name: "",
+#   description: ""
+# ]
+
