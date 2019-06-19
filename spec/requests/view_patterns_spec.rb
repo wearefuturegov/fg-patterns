@@ -4,7 +4,6 @@ RSpec.describe "View Patterns", type: :request do
     expect(response).to be_successful
     Pattern.all.each do |pattern|
       expect(response.body).to include(pattern.name)
-      expect(response.body).to have_link(pattern.name, href: patterns_path(selected: pattern.id))
     end
   end
 
@@ -15,10 +14,10 @@ RSpec.describe "View Patterns", type: :request do
   end
 
   it "loads the relevant services for a pattern" do
-    pattern = Pattern.first
-    get patterns_path(selected: pattern)
-    service = pattern.services.first
-    expect(response.body).to include(service.name)
+    get patterns_path(selected: Pattern.first)
+    Pattern.first.services.each do |service|
+      expect(response.body).to include(service.name)
+    end
   end
 
 end
