@@ -10,13 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_17_134224) do
+ActiveRecord::Schema.define(version: 2019_06_19_103143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "life_events", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "life_events_services", id: false, force: :cascade do |t|
+    t.bigint "service_id", null: false
+    t.bigint "life_event_id", null: false
+    t.index ["service_id", "life_event_id"], name: "index_life_events_services_on_service_id_and_life_event_id"
   end
 
   create_table "patterns", force: :cascade do |t|
@@ -35,6 +41,9 @@ ActiveRecord::Schema.define(version: 2019_06_17_134224) do
   create_table "services", force: :cascade do |t|
     t.string "name"
     t.text "sub_services"
+    t.string "organisation_type"
+    t.string "suggester_email"
+    t.string "suggester_organisation"
   end
 
 end
