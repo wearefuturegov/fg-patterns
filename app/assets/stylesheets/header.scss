@@ -10,9 +10,6 @@ header {
     padding-top: 15px;
     padding-bottom: 15px;
   }
-  .third {
-    margin-left: 0;
-  }
 
   .logo {
     width: 175px;
@@ -25,7 +22,6 @@ header {
     .nav-link {
       a {
         color: $black;
-        font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 0.95em;
         display: inline;
         line-height: 30px;
@@ -62,5 +58,5 @@ header {
   }
 }
 .header_break {
-  height: 65px;
+  height: 85px;
 }

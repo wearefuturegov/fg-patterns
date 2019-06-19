@@ -1,24 +1,40 @@
-.container
-  = link_to 'All patterns', patterns_path
-  - @patterns.each do |pattern|
-    = link_to pattern.name, patterns_path(selected: pattern.id)
+.container.white_bg
+  .full_width{ class: "active_#{params[:selected]}" }
+    = link_to 'All patterns', patterns_path, class: "single_pattern fg_brand"
+    - @patterns.each do |pattern|
+      = link_to pattern.name, patterns_path(selected: pattern.id), class: "single_pattern #{pattern.name.parameterize}"
+  .full_width
+    - if @selected_pattern
+      .description
+        %h3= @selected_pattern.name
+        = @selected_pattern.description.html_safe
+    - else
+      .description
+        %h3 All patterns
+        %p We’ve talked about why we think having  a common set of service patterns across local government would be a great idea.
+
+        %p
+          So far, we’ve mapped 157 transactional services, covering everything from ‘register a birth’ to ‘report a pothole’.
+          %span.bold And we’ve identified seven common service patterns.
+
+        %p.bold To browse the different service patterns and see some examples of services that use them, click on the buttons below.
+
+        %p You can add your own services to this library and tell us what common pattern(s) they use. There’s also a chance to give us extra details like what steps they include and what type of organisation they sit in.
 
 .container
-  - if @selected_pattern
-    = @selected_pattern.name
-    pattern
-    %div
-      = @selected_pattern.description
-  - else
-    All patterns
-    Kitsch banjo truffaut asymmetrical fingerstache brooklyn. Green juice artisan DIY wayfarers post-ironic fixie. Coloring book keytar vape kale chips trust fund. Artisan ennui food truck pinterest wolf art party master cleanse schlitz pabst. Vinyl fanny pack PBR&B activated charcoal shoreditch before they sold out venmo beard literally pickled. Cray salvia poke normcore vinyl XOXO. Crucifix stumptown celiac 3 wolf moon.
-
-.container
-  %table
+  %table.pattern_table
+    %tr
+      %th{ style: 'width: 40%;' } Service name
+      %th Patterns
+      %th Life events
+      %th Organisation
     - @services.each do |service|
       %tr
         %td
           = service.name
         %td
           - service.patterns.each do |service_pattern|
-            = service_pattern.name
+            .single_pattern{ class: service_pattern.name.parameterize }
+              = service_pattern.name
+        %td
+        %td

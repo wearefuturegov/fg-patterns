@@ -1,0 +1,136 @@
+body.index.patterns {
+  background-color: $light_grey;
+}
+
+.description {
+  max-width: 960px;
+  h3 {
+    margin-top: 25px;
+  }
+  p {
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.single_pattern {
+  padding: 2px 7px;
+  border-radius: 3px;
+  display: inline-block;
+  vertical-align: middle;
+  color: $black;
+  text-decoration: none;
+
+  &.check-something {
+    background: rgba($turqoise, 0.3);
+    &:hover {
+      background: rgba($turqoise, 0.9);
+      color: #fff;
+    }
+  }
+  &.register-for-something {
+    background: rgba($yellow, 0.3);
+    &:hover {
+      background: rgba($yellow, 0.9);
+      color: #fff;
+    }
+  }
+  &.tell-something {
+    background: rgba($purple, 0.3);
+    &:hover {
+      background: rgba($purple, 0.9);
+      color: #fff;
+    }
+  }
+  &.request-something {
+    background: rgba($blue, 0.3);
+    &:hover {
+      background: rgba($blue, 0.9);
+      color: #fff;
+    }
+  }
+  &.apply-for-something {
+    background: rgba($red, 0.3);
+    &:hover {
+      background: rgba($red, 0.9);
+      color: #fff;
+    }
+  }
+  &.book-something {
+    background: rgba($orange, 0.3);
+    &:hover {
+      background: rgba($orange, 0.9);
+      color: #fff;
+    }
+  }
+  &.update-something {
+    background: rgba($dark_purple, 0.3);
+    &:hover {
+      background: rgba($dark_purple, 0.9);
+      color: #fff;
+    }
+  }
+  &.fg_brand {
+    background: rgba($brand, 0.3);
+    &:hover {
+      background: rgba($brand, 0.9);
+      color: #fff;
+    }
+  }
+}
+
+.active_ {
+  .fg_brand {
+    background: rgba($brand, 1);
+    color: #fff;
+  }
+}
+.active_1 {
+  .check-something {
+    background: rgba($turqoise, 1);
+    color: #fff;
+  }
+}
+.active_2 {
+  .register-for-something {
+    background: rgba($yellow, 1);
+    color: #fff;
+  }
+}
+.active_3 {
+  .tell-something {
+    background: rgba($purple, 1);
+    color: #fff;
+  }
+}
+.active_4 {
+  .request-something {
+    background: rgba($blue, 1);
+    color: #fff;
+  }
+}
+.active_5 {
+  .apply-for-something {
+    background: rgba($red, 1);
+    color: #fff;
+  }
+}
+.active_6 {
+  .book-something {
+    background: rgba($orange, 1);
+    color: #fff;
+  }
+}
+.active_7 {
+  .update-something {
+    background: rgba($dark_purple, 1);
+    color: #fff;
+  }
+}
+
+.pattern_table {
+  .single_pattern {
+    font-size: 0.75em;
+  }
+}
