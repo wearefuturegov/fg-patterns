@@ -16,7 +16,7 @@ body.index.patterns {
 
 .single_pattern {
   padding: 2px 7px;
-  border-radius: 3px;
+  border-radius: $border-radius;
   display: inline-block;
   vertical-align: middle;
   color: $black;

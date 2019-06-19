@@ -1,0 +1,36 @@
+.table {
+  padding: 0;
+  .row {
+    @include grid-container;
+
+    .table_head, .table_data {
+
+    }
+    .two_col {
+      @include grid-column(12, $mobile_grid);
+
+      @include desktop {
+        @include grid-column(2);
+      }
+    }
+    .table_head {
+      text-transform: uppercase;
+      color: rgba($dark_gray, 0.8);
+      font-size: 0.75em;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    &.data_row {
+      background: #fff;
+      border-radius: $border-radius;
+      padding: 10px 0px;
+      margin-bottom: 15px;
+    }
+    .table_data {
+    }
+  }
+}
+
+.pattern_table.table {
+  margin-top: 50px;
+}

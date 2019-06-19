@@ -21,20 +21,21 @@
 
         %p You can add your own services to this library and tell us what common pattern(s) they use. There’s also a chance to give us extra details like what steps they include and what type of organisation they sit in.
 
-.container
-  %table.pattern_table
-    %tr
-      %th{ style: 'width: 40%;' } Service name
-      %th Patterns
-      %th Life events
-      %th Organisation
-    - @services.each do |service|
-      %tr
-        %td
-          = service.name
-        %td
-          - service.patterns.each do |service_pattern|
-            .single_pattern{ class: service_pattern.name.parameterize }
-              = service_pattern.name
-        %td
-        %td
+
+.pattern_table.table.container
+  %h2="#{@services.count} total services"
+  .row.head_row
+    .table_head.third Service name
+    .table_head.quarter Patterns
+    .table_head.quarter Life events
+    .table_head.two_col Organisation
+  - @services.each do |service|
+    .row.data_row
+      .table_data.third
+        = service.name
+      .table_data.quarter
+        - service.patterns.each do |service_pattern|
+          .single_pattern{ class: service_pattern.name.parameterize }
+            = service_pattern.name
+      .table_data.quarter
+      .table_data.two_col
