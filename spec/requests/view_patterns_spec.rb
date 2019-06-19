@@ -20,4 +20,9 @@ RSpec.describe "View Patterns", type: :request do
     end
   end
 
+  it "dispays 'Add a new service button'" do
+    get patterns_path
+    expect(response.body).to include("Add a new service")
+  end
+
 end

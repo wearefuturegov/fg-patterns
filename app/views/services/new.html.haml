@@ -1,0 +1,8 @@
+Add a new service
+
+= simple_form_for @service do |f|
+  = f.input :name
+  =# f.input :patterns, as: :check_boxes
+  =# f.collection_check_boxes :pattern_ids, Pattern.all, :id, :name, label: "Pattern"
+  = f.input :patterns, as: :check_boxes, collection: Pattern.all, :label => 'Patterns'
+  = f.button :submit, "Create service"
