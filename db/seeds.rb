@@ -14,31 +14,39 @@ require 'csv'
 patterns = [
   {
     name: "Check something",
-    description: "Lorem ipsum dolor amet poke"
+    description: "<p>This pattern enables a person to look up a piece of information and understand if applies to them or their circumstances. When an eligibility check can be done independently, it should be considered part of this pattern.</p>
+                  <p><strong>Tip:</strong> Is the user looking for specific  information (the status of something, the closest location or eligibility)?</p>"
   },
   {
     name: "Register for something",
-    description: "organic snackwave readymade direct"
+    description: "<p>This pattern enables the user to complete a process (like booking something). By registering, users will create an account with personal and sensitive data that they can return to. </p>
+                  <p><strong>Tip:</strong> Is the user being asked to supply personal details to a type of account?</p>"
   },
   {
     name: "Tell something",
-    description: "trade hot chicken tbh williamsburg "
+    description: "<p>This pattern enables a person who needs/wants to give some information to the council, like a referral or to report something.</p>
+                  <p><strong>Tip:</strong> Is the user getting in contact with the council to update something or inform the council about something?</p>"
   },
   {
     name: "Request something",
-    description: "authentic tote bag vape vexillologist "
+    description: "<p>This pattern enables the user to ask for something in order to get to some tangible outcomes. Typically there is no eligibility check, because the user is entitled to what s/he wants by default.</p>
+                  <p><strong>Tip:</strong> Is the user being asked to request something to complete a task?</p>"
   },
   {
     name: "Apply for something",
-    description: "cliche fam selfies. Brunch franzen cray"
+    description: "<p>This pattern enables the user to complete an application process.</p>
+                  <p><strong>Tip:</strong> Is the user being asked to submit a type of application to complete a task?</p>"
   },
   {
     name: "Book something",
-    description: "four loko live-edge kitsch hoodie chia."
+    description: "<p>This pattern enables the user to book things such as a room, an item or a person’s time.
+                  In the majority of the cases, a specific date and time need to be selected.</p>
+                  <p><strong>Tip:</strong> Is the user being asked to book something in order to complete a task?</p>"
   },
   {
-    name: "Update something",
-    description: "ipsum poke organic cliche fam kitsch. "
+    name: "Pay for something",
+    description: "<p>This pattern enables the user to complete a monetary transaction towards the council.</p>
+                  <p><strong>Tip:</strong> Is the user being asked to complete a monetary transaction?</p>"
   }
 ]
 patterns.each do |pattern|

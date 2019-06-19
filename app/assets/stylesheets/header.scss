@@ -1,0 +1,62 @@
+$space-between: 15px;
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  .container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .logo {
+    width: 175px;
+    height: 25px;
+    background: image-url("fg_logo.svg") center center no-repeat;
+    background-size: 100%;
+  }
+
+  nav {
+    .nav-link {
+      a {
+        color: $black;
+        font-size: 0.95em;
+        display: inline;
+        line-height: 30px;
+        text-decoration: none;
+        width: auto;
+        overflow: hidden;
+        padding-right: 0.4em;
+        padding-left: 0.4em;
+        margin-right: $space-between;
+        text-align: right;
+        float: right;
+
+        &.active {
+          font-weight: 600;
+        }
+      }
+      &:first-child {
+        a {
+          margin-right: 0
+        }
+      }
+    }
+    .spacer a {
+      margin-right: $space-between;
+    }
+    .divider {
+      display: block;
+      width: 1px;
+      height: 25px;
+      margin: 3px $space-between 0px 0px;
+      float: right;
+      background-color: #333;
+    }
+  }
+}
+.header_break {
+  height: 85px;
+}
