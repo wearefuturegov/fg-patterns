@@ -1,6 +1,9 @@
-- @patterns.each do |pattern|
+%div
   %div
-    = link_to pattern.name, patterns_path(selected: pattern.id)
+    = link_to 'All patterns', patterns_path
+  - @patterns.each do |pattern|
+    %div
+      = link_to pattern.name, patterns_path(selected: pattern.id)
 
 %div
   - if @selected_pattern
