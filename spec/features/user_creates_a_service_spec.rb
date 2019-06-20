@@ -16,11 +16,15 @@ RSpec.feature "Service creation", :type => :feature do
     fill_in 'Name', with: 'Name of a new service'
 
     select 'County council', from: 'Organisation type'
+
+    fill_in 'Steps', with: "Here are the steps required"
+
     click_button 'Create service'
 
     expect(page).to have_text('Thankyou!')
     expect(Service.last.name).to eq('Name of a new service')
     expect(Service.last.organisation_type).to eq('County council')
+    expect(Service.last.sub_services).to eq('Here are the steps required')
   end
 
 end
