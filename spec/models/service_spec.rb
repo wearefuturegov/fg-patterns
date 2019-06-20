@@ -19,12 +19,14 @@ RSpec.describe Service, type: :model do
     service = Service.create(
       name: "Register a birth",
       sub_services: "A. Book an appointment (online form) > Pay (in person)
-              B. Book an appointment (by phone) > Pay (in person)"
+              B. Book an appointment (by phone) > Pay (in person)",
+      life_events: [LifeEvent.first, LifeEvent.last]
     )
     expect(service).to be_valid
     expect(service.name).to eq('Register a birth')
     expect(service.sub_services).to eq("A. Book an appointment (online form) > Pay (in person)
               B. Book an appointment (by phone) > Pay (in person)")
+    expect(service.life_events).to eq([LifeEvent.first, LifeEvent.last])
   end
 
 end

@@ -77,8 +77,7 @@ patterns.each do |pattern|
         life_event_names.each  do |life_event_name|
           life_events << LifeEvent.find_or_create_by(name: life_event_name)
         end
-
-        service.life_events << LifeEvent.where(name: life_events)
+        service.life_events << LifeEvent.where(name: life_event_names)
       end
       service.patterns << new_pattern
       service.save
