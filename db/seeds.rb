@@ -66,22 +66,22 @@ patterns.each do |pattern|
     # Iterate through services for that pattern
     pattern_csv.each do |row|
       # Create new service unless it already exists
-      unless Service.where(name: row[0]).count > 0
-        service = Service.new
-        service.name = row[0]
-        service.sub_services = row[1]
-        if row[2]
-          life_event_names = row[2].split(', ')
-          life_events = []
-          life_event_names.each  do |life_event_name|
-            life_events << LifeEvent.find_or_create_by(name: life_event_name)
-          end
-
-          service.life_events = LifeEvent.where(name: life_events)
+      service = Service.where(name: row[0]).first || Service.new
+      #unless Service.where(name: row[0]).count > 0
+      #service = Service.new
+      service.name ||= row[0]
+      service.sub_services ||= row[1]
+      if row[2]
+        life_event_names = row[2].split(', ')
+        life_events = []
+        life_event_names.each  do |life_event_name|
+          life_events << LifeEvent.find_or_create_by(name: life_event_name)
         end
-        service.patterns << new_pattern
-        service.save
+
+        service.life_events << LifeEvent.where(name: life_events)
       end
+      service.patterns << new_pattern
+      service.save
     end
   end
 
