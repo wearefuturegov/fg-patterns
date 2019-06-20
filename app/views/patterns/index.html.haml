@@ -39,4 +39,6 @@
           .single_pattern{ class: service_pattern.name.parameterize }
             = service_pattern.name
       .table_data.quarter
+        - service.life_events.each do |life_event|
+          = life_event.name
       .table_data.two_col
