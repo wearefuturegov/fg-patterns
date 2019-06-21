@@ -68,7 +68,7 @@ patterns.each do |pattern|
 
       service = Service.where(name: row[0]).first || Service.new
       service.name ||= row[0]
-      service.sub_services ||= row[1]
+      service.steps ||= row[1]
       if row[2] # life events
         life_event_names = row[2].split(', ')
         life_events = []
