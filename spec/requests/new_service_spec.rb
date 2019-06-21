@@ -7,8 +7,8 @@ RSpec.describe "New service", type: :request do
   it "creates a new service" do
     service = Service.create(
       name: "This is a service name",
-      organisation_type: "district council",
-      sub_services: "A. Step 1
+      organisation_types: ["District council"],
+      steps: "A. Step 1
       B. Step 2",
       life_events: [LifeEvent.first],
       suggester_email: 'example@wearefuturegov.com',

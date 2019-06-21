@@ -15,7 +15,8 @@ RSpec.feature "Service creation", :type => :feature do
 
     fill_in 'Name', with: 'Name of a new service'
 
-    select 'County council', from: 'Organisation type'
+    org_type_checkbox = within('.service_organisation_types') { find("input[type='checkbox']", match: :first) }
+    org_type_checkbox.set(:true)
 
     fill_in 'Steps', with: "Here are the steps required"
 
@@ -23,8 +24,8 @@ RSpec.feature "Service creation", :type => :feature do
 
     expect(page).to have_text('Thankyou!')
     expect(Service.last.name).to eq('Name of a new service')
-    expect(Service.last.organisation_type).to eq('County council')
-    expect(Service.last.sub_services).to eq('Here are the steps required')
+    expect(Service.last.organisation_types).to eq(['County council'])
+    expect(Service.last.steps).to eq('Here are the steps required')
   end
 
 end
