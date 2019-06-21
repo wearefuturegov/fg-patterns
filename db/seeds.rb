@@ -66,6 +66,7 @@ patterns.each do |pattern|
     # Iterate through services for that pattern
     pattern_csv.each do |row|
       name_string = row[0]
+      name_string.strip! # Trim any whitespace from beginning and end
       service = Service.where(name: name_string).first || Service.new
 
       if name_string.include? "(NT)"
@@ -75,7 +76,7 @@ patterns.each do |pattern|
       else
         service.transactional = true
       end
-      service.name ||= name_string.strip! # Trim any whitespace from beginning and end
+      service.name ||= name_string
       service.steps ||= row[1]
       if row[2] # life events
         life_event_names = row[2].split(', ')
