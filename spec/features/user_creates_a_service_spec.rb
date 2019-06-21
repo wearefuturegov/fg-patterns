@@ -26,6 +26,11 @@ RSpec.feature "Service creation", :type => :feature do
     pattern_checkbox = within('.service_pattern_ids') { find("input[type='checkbox']", match: :first) }
     pattern_checkbox.set(:true)
 
+    life_event_checkbox = within('.service_life_event_ids') { find("input[type='checkbox']", match: :first) }
+    life_event_checkbox.set(:true)
+
+    select 'Yes', from: 'Transactional'
+
     click_button 'Create service'
 
     expect(page).to have_text('Thankyou!')

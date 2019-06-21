@@ -16,6 +16,6 @@ class ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit(:name, :steps, :suggester_email, :suggester_organisation, organisation_types: [], pattern_ids: [])
+    params.require(:service).permit(:name, :steps, :suggester_email, :suggester_organisation, organisation_types: [], pattern_ids: [], life_event_ids: [])
   end
 end
