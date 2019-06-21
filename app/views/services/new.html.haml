@@ -11,8 +11,13 @@
   = f.input :organisation_types, as: :check_boxes, collection: Service.organisation_types, hint: "We’d like to get a sense of where different services sit in different types of organisations. For example, you can tell us whether a service is in a county, borough or district council.", include_hidden: false
 
   = f.input :steps, hint: "This is the number of separate steps to complete in order to access an end-to-end service. For example, if users are registering a birth, they will normally be asked to book an appointment and then pay for the service."
+  %fieldset
+    %legend Your details
+    We’re asking for your email address and the name of the organisation that you work for.
+    This is so that our moderators can follow up with you if they have a question about the services you have suggested. It might be that we just need a little more detail to complete the entry.
+    = f.input :suggester_email, label: 'Your email'
+    = f.input :suggester_organisation, label: 'Your organisation'
 
-  =# f.input :patterns, as: :check_boxes
-  =# f.collection_check_boxes :pattern_ids, Pattern.all, :id, :name, label: "Pattern"
-  = f.input :patterns, as: :check_boxes, collection: Pattern.all, :label => 'Patterns'
+  = f.input :pattern_ids, as: :check_boxes, collection: Pattern.all, :label => 'Patterns'
+  =# f.collection_check_boxes :pattern_ids, Pattern.all, :id, :name
   = f.button :submit, "Create service"

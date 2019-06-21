@@ -20,12 +20,23 @@ RSpec.feature "Service creation", :type => :feature do
 
     fill_in 'Steps', with: "Here are the steps required"
 
+    fill_in 'Your email', with: 'example@example.com'
+    fill_in 'Your organisation', with: 'ECC'
+
+    pattern_checkbox = within('.service_pattern_ids') { find("input[type='checkbox']", match: :first) }
+    pattern_checkbox.set(:true)
+
     click_button 'Create service'
 
     expect(page).to have_text('Thankyou!')
-    expect(Service.last.name).to eq('Name of a new service')
-    expect(Service.last.organisation_types).to eq(['County council'])
-    expect(Service.last.steps).to eq('Here are the steps required')
+
+    service = Service.last
+    expect(service.name).to eq('Name of a new service')
+    expect(service.organisation_types).to eq(['County council'])
+    expect(service.steps).to eq('Here are the steps required')
+    expect(service.suggester_email).to eq('example@example.com')
+    expect(service.suggester_organisation).to eq('ECC')
+    expect(service.patterns.first).to eq(Pattern.first)
   end
 
 end
