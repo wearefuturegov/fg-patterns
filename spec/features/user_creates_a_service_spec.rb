@@ -42,6 +42,7 @@ RSpec.feature "Service creation", :type => :feature do
     expect(service.suggester_email).to eq('example@example.com')
     expect(service.suggester_organisation).to eq('ECC')
     expect(service.patterns.first).to eq(Pattern.first)
+    expect(service.transactional).to eq(true)
   end
 
 end
