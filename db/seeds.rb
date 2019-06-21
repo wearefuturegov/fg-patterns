@@ -83,6 +83,7 @@ patterns.each do |pattern|
         end
       end
       service.patterns << new_pattern
+      service.organisation_types = ["County council"]
       service.save
     end
   end
