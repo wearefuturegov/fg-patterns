@@ -1,10 +1,12 @@
 class Service < ApplicationRecord
   validates :name, presence: true
 
+  serialize :organisation_types, Array
+
   has_and_belongs_to_many :patterns, as: :service_patterns
   has_and_belongs_to_many :life_events
 
-  def self.organisation_type_dropdown
+  def self.organisation_types
     [
       'County council',
       'District council',

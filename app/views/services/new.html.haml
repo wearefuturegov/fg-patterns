@@ -8,9 +8,9 @@
 
   = f.input :name, hint: "This is might be what the service is called in your service directory, in your communications or on your website. But also think about what a user might be looking for from a service. For example, ‘register a birth’, ‘apply for a Blue Badge’ or ‘report a flood’."
 
-  = f.input :organisation_type, as: :select, collection: Service.organisation_type_dropdown, prompt: "Choose one", hint: "We’d like to get a sense of where different services sit in different types of organisations. For example, you can tell us whether a service is in a county, borough or district council."
+  = f.input :organisation_types, as: :check_boxes, collection: Service.organisation_types, hint: "We’d like to get a sense of where different services sit in different types of organisations. For example, you can tell us whether a service is in a county, borough or district council.", include_hidden: false
 
-  = f.input :sub_services, label: "Steps", hint: "This is the number of separate steps to complete in order to access an end-to-end service. For example, if users are registering a birth, they will normally be asked to book an appointment and then pay for the service."
+  = f.input :steps, hint: "This is the number of separate steps to complete in order to access an end-to-end service. For example, if users are registering a birth, they will normally be asked to book an appointment and then pay for the service."
 
   =# f.input :patterns, as: :check_boxes
   =# f.collection_check_boxes :pattern_ids, Pattern.all, :id, :name, label: "Pattern"
