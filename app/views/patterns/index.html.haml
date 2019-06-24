@@ -2,7 +2,7 @@
   #pattern_links.full_width{ class: "active_#{params[:selected]}" }
     = link_to 'All patterns', patterns_path, class: "single_pattern fg_brand"
     - @patterns.each do |pattern|
-      = link_to pattern.name, patterns_path(selected: pattern.id), class: "single_pattern #{pattern.name.parameterize}"
+      = link_to pattern.name.chomp(" something").chomp(" for"), patterns_path(selected: pattern.id), class: "single_pattern #{pattern.name.parameterize}"
   .full_width
     - if @selected_pattern
       .description
@@ -24,7 +24,7 @@
 .container.full_container
   = link_to "Add a new service", new_service_path, class: 'button right'
 
-.pattern_table.table.container
+.pattern_table.table.container.full_container
   %h2="#{@services.count} total services"
   .row.head_row
     .table__head.third Service name
@@ -46,3 +46,6 @@
       .table__data.two_col
         - service.organisation_types.each do |org_type|
           = org_type
+
+.container.full_container
+  = link_to "Add a new service", new_service_path, class: 'button right'
