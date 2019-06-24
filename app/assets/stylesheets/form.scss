@@ -29,6 +29,7 @@
 
 .simple_form span.error {
   color: $red;
+  font-weight: 600;
 }
 .simple_form .field_with_errors [type='color'], .simple_form .field_with_errors [type='date'], .simple_form .field_with_errors [type='datetime'], .simple_form .field_with_errors [type='datetime-local'], .simple_form .field_with_errors [type='email'], .simple_form .field_with_errors [type='month'], .simple_form .field_with_errors [type='number'], .simple_form .field_with_errors [type='password'], .simple_form .field_with_errors [type='search'], .simple_form .field_with_errors [type='tel'], .simple_form .field_with_errors [type='text'], .simple_form .field_with_errors [type='time'], .simple_form .field_with_errors [type='url'], .simple_form .field_with_errors [type='week'], .simple_form .field_with_errors input:not([type]), .simple_form .field_with_errors textarea {
   border: 1px solid rgba($red, 0.8);
