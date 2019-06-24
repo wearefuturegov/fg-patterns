@@ -68,7 +68,8 @@ patterns.each do |pattern|
       name_string = row[0]
       name_string.strip! # Trim any whitespace from beginning and end
       service = Service.where(name: name_string).first || Service.new
-
+      service.seed = true
+      service.status = 'published'
       if name_string.include? "(NT)"
         service.transactional = false
         name_string.slice!("(NT) ")
