@@ -1,5 +1,5 @@
 class Service < ApplicationRecord
-  validates :name, :steps, :patterns, :organisation_types, presence: true
+  validates :name, :steps, :pattern_ids, :organisation_types, presence: true
   validates :suggester_email, :suggester_organisation, presence: true, unless: :seed
 
   serialize :organisation_types, Array
