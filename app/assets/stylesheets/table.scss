@@ -1,5 +1,4 @@
 .table {
-  padding: 0;
   .row {
     @include grid-container;
 
@@ -67,8 +66,4 @@
     .table__data {
     }
   }
-}
-
-.pattern_table.table {
-  margin-top: 25px;
 }

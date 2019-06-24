@@ -1,0 +1,122 @@
+.simple_form {
+  label.required:after {
+    content: "";
+  }
+  .input {
+    margin-bottom: 40px;
+  }
+}
+.simple_form span.error, .simple_form span.hint {
+  line-height: 1.4;
+  margin-top: 0;
+  font-size: 80%;
+  max-width: 623px;
+}
+
+.service_transactional select {
+  width: 100px;
+}
+
+[type='color'], [type='date'], [type='datetime'], [type='datetime-local'], [type='email'], [type='month'], [type='number'], [type='password'], [type='search'], [type='tel'], [type='text'], [type='time'], [type='url'], [type='week'], input:not([type]), textarea {
+  border: 1px solid $dark_gray;
+  border-radius: $border-radius;
+}
+
+[type='color']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='email']:focus, [type='month']:focus, [type='number']:focus, [type='password']:focus, [type='search']:focus, [type='tel']:focus, [type='text']:focus, [type='time']:focus, [type='url']:focus, [type='week']:focus, input:not([type]):focus, textarea:focus {
+  border-color: $dark_gray;
+  box-shadow: 0 0 0 2px $brand;
+}
+
+.simple_form span.error {
+  color: $red;
+}
+.simple_form .field_with_errors [type='color'], .simple_form .field_with_errors [type='date'], .simple_form .field_with_errors [type='datetime'], .simple_form .field_with_errors [type='datetime-local'], .simple_form .field_with_errors [type='email'], .simple_form .field_with_errors [type='month'], .simple_form .field_with_errors [type='number'], .simple_form .field_with_errors [type='password'], .simple_form .field_with_errors [type='search'], .simple_form .field_with_errors [type='tel'], .simple_form .field_with_errors [type='text'], .simple_form .field_with_errors [type='time'], .simple_form .field_with_errors [type='url'], .simple_form .field_with_errors [type='week'], .simple_form .field_with_errors input:not([type]), .simple_form .field_with_errors textarea {
+  border: 1px solid rgba($red, 0.8);
+}
+
+.convert_checkboxes {
+  label {
+    display: inline-block;
+    margin-right: 6px;
+    margin-bottom: 6px;
+  }
+  label input {
+    display: none;
+  }
+  label input {
+    & + span {
+      background: $light_gray;
+    }
+    &:hover + span {
+      cursor: pointer;
+      background: darken($light_gray, 10%);
+      &.check-something {
+        background: rgba($turqoise, 0.9);
+        color: #fff;
+      }
+      &.register-for-something {
+        background: rgba($yellow, 0.9);
+        color: #fff;
+      }
+      &.tell-something {
+        background: rgba($purple, 0.9);
+        color: #fff;
+      }
+      &.request-something {
+        background: rgba($blue, 0.9);
+        color: #fff;
+      }
+      &.apply-for-something {
+        background: rgba($red, 0.9);
+        color: #fff;
+      }
+      &.book-something {
+        background: rgba($orange, 0.9);
+        color: #fff;
+      }
+      &.pay-for-something {
+        background: rgba($dark_purple, 0.9);
+        color: #fff;
+      }
+      &.fg_brand {
+        background: rgba($brand, 0.9);
+        color: #fff;
+      }
+    }
+    &:checked + span {
+      background: darken($light_gray, 10%);
+      &.check-something {
+        background: rgba($turqoise, 1);
+        color: #fff;
+      }
+      &.register-for-something {
+        background: rgba($yellow, 1);
+        color: #fff;
+      }
+      &.tell-something {
+        background: rgba($purple, 1);
+        color: #fff;
+      }
+      &.request-something {
+        background: rgba($blue, 1);
+        color: #fff;
+      }
+      &.apply-for-something {
+        background: rgba($red, 1);
+        color: #fff;
+      }
+      &.book-something {
+        background: rgba($orange, 1);
+        color: #fff;
+      }
+      &.pay-for-something {
+        background: rgba($dark_purple, 1);
+        color: #fff;
+      }
+      &.fg_brand {
+        background: rgba($brand, 1);
+        color: #fff;
+      }
+    }
+  }
+}
