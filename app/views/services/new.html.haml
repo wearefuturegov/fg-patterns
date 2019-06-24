@@ -2,7 +2,7 @@
   %h2
     Add a new service
 
-  %p
+  %p.description
     You can add your own services to the service pattern library. You can also give us extra details like what steps they might include, what type of organisation they sit in or what type of life event they touch on for the user.
 
   = simple_form_for @service do |f|
@@ -21,10 +21,11 @@
 
     %br
     %fieldset
-      %legend Your details
-      %p We’re asking for your email address and the name of the organisation that you work for.
-      %p This is so that our moderators can follow up with you if they have a question about the services you have suggested. It might be that we just need a little more detail to complete the entry.
+      .description
+        %legend Your details
+        %p We’re asking for your email address and the name of the organisation that you work for.
+        %p This is so that our moderators can follow up with you if they have a question about the services you have suggested. It might be that we just need a little more detail to complete the entry.
       = f.input :suggester_email, label: 'Your email', placeholder: 'Your email'
       = f.input :suggester_organisation, label: 'Your organisation', placeholder: 'Your organisation'
 
-    = f.button :submit, "Create service", class: "button right"
+    = f.button :submit, "Add this service", class: "button right"
