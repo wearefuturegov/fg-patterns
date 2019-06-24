@@ -11,15 +11,16 @@
 
     = f.input :steps, hint: "This is the number of separate steps to complete in order to access an end-to-end service. For example, if users are registering a birth, they will normally be asked to book an appointment and then pay for the service."
 
-  %div.input.check_boxes.required.service_patterns.field_with_hint
-    = f.label :pattern_ids, "Patterns", required: true
-    = f.collection_check_boxes(:pattern_ids, Pattern.all, :id, :name) do |builder|
-      = builder.check_box
-      %span= builder.object.name
-    %span.hint
-      These are the common interactions that we can spot once we have identified the steps of a service. Things like ‘Check something’ or ‘Register for something’. A service can involve more than one pattern.
-    %span.errors
-      = f.error :pattern_ids
+    .input.check_boxes.required.service_patterns.field_with_hint.convert_checkboxes
+      %div= f.label :pattern_ids, "Which patterns apply to this service?", required: true
+      = f.collection_check_boxes(:pattern_ids, Pattern.all, :id, :name) do |builder|
+        = builder.check_box
+        %span{ class: "single_pattern #{builder.object.name.parameterize}" }
+          = builder.object.name
+      %span.hint
+        These are the common interactions that we can spot once we have identified the steps of a service. Things like ‘Check something’ or ‘Register for something’. A service can involve more than one pattern.
+      %span.errors
+        = f.error :pattern_ids
 
     = f.input :life_event_ids, as: :check_boxes, collection: LifeEvent.all, label: 'Which life events apply to this service? (optional)'
 
