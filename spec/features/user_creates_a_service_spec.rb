@@ -43,6 +43,9 @@ RSpec.feature "Service creation", :type => :feature do
     expect(service.suggester_organisation).to eq('ECC')
     expect(service.patterns.first).to eq(Pattern.first)
     expect(service.transactional).to eq(true)
+
+    visit patterns_path(selected: service.patterns.first.id)
+    expect(page).to_not have_text(service.name)
   end
 
 end

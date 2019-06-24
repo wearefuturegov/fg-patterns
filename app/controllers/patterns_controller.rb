@@ -4,9 +4,9 @@ class PatternsController < ApplicationController
     @patterns = Pattern.all
     if params[:selected]
       @selected_pattern = Pattern.find(params[:selected])
-      @services = @selected_pattern.services
+      @services = @selected_pattern.services.published
     else
-      @services = Service.all
+      @services = Service.published
     end
   end
 end

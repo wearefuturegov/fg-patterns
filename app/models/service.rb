@@ -7,6 +7,10 @@ class Service < ApplicationRecord
   has_and_belongs_to_many :patterns, as: :service_patterns
   has_and_belongs_to_many :life_events
 
+  before_create :set_status, unless: :seed
+
+  scope :published, -> { where status: 'published' }
+
   attr_accessor :seed # Is set to true during seeding process so that suggester validations can be skipped.
 
   def self.organisation_types
@@ -19,6 +23,12 @@ class Service < ApplicationRecord
       'London borough',
       'Metropolitan borough'
     ]
+  end
+
+  private
+
+  def set_status
+    self.status = 'awaiting_approval'
   end
 
 end

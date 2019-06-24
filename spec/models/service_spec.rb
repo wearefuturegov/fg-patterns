@@ -46,4 +46,9 @@ RSpec.describe Service, type: :model do
     expect(Service.new(attrs)).to be_valid
   end
 
+  it 'is not published until approved' do
+    service = Service.create(FactoryBot.attributes_for(:service))
+    expect(service.status).to eq('awaiting_approval')
+  end
+
 end
