@@ -62,6 +62,7 @@
   .single_pattern {
     margin: 4px 2px;
     padding: 5px 20px;
+    font-weight: 600;
     &.check-something {
       &:hover {
         background: rgba($turqoise, 0.9);

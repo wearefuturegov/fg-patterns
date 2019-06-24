@@ -22,10 +22,13 @@ html {
   }
   &.right {
     float: right;
+    @include mobile {
+      width: 100%;
+    }
   }
 }
 
-body.index.patterns, body.services.new {
+body.index.patterns, body.services.new, body.services.create {
   background-color: $light_grey;
 }
 
@@ -33,9 +36,27 @@ body.index.patterns, body.services.new {
   &.full_container {
     padding-left: 0;
     padding-right: 0;
+    @include mobile {
+      padding-left: 13.5px;
+      padding-right: 13.5px;
+    }
   }
 }
 
 h2 {
   margin: 0 0 0.5em;
+}
+
+.two_col {
+  @include grid-column(12, $mobile_grid);
+
+  @include desktop {
+    @include grid-column(2);
+  }
+}
+.only_mobile {
+  display: none;
+  @include mobile {
+    display: block;
+  }
 }

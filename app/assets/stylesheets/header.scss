@@ -10,6 +10,9 @@ header {
   .container {
     padding-top: 15px;
     padding-bottom: 15px;
+    @media (min-width: 770px) {
+      max-width: none;
+    }
   }
 
   .logo {
@@ -20,6 +23,12 @@ header {
   }
 
   nav {
+    @include tablet {
+      display: none;
+    }
+    @include mobile {
+      display: none;
+    }
     .nav-link {
       a {
         color: $black;
@@ -60,4 +69,14 @@ header {
 }
 .header_break {
   height: 85px;
+}
+
+.nav_container {
+  .two_col {
+    @include grid-column(12, $mobile_grid);
+
+    @include desktop {
+      @include grid-column(10);
+    }
+  }
 }
