@@ -22,9 +22,28 @@
       %span.errors
         = f.error :pattern_ids
 
-    = f.input :life_event_ids, as: :check_boxes, collection: LifeEvent.all, label: 'Which life events apply to this service? (optional)'
+    .input.check_boxes.required.service_patterns.field_with_hint.convert_checkboxes
+      %div= f.label :life_event_ids, "Which life events apply to this service? (optional)", required: true
+      = f.collection_check_boxes(:life_event_ids, LifeEvent.all, :id, :name) do |builder|
+        = builder.check_box
+        %span{ class: "single_pattern #{builder.object.name.parameterize}" }
+          = builder.object.name
+      %span.hint
+        These are the common interactions that we can spot once we have identified the steps of a service. Things like ‘Check something’ or ‘Register for something’. A service can involve more than one pattern.
+      %span.errors
+        = f.error :life_event_ids
 
-    = f.input :organisation_types, as: :check_boxes, collection: Service.organisation_types, hint: "We’d like to get a sense of where different services sit in different types of organisations. For example, you can tell us whether a service is in a county, borough or district council.", include_hidden: false, label: 'Which òrganisation types is this service found in?'
+    / .input.check_boxes.required.service_patterns.field_with_hint.convert_checkboxes
+    /   %div= f.label :organisation_types, "Which organisation types is this service found in?", required: true
+    /   = f.collection_check_boxes(:organisation_types, Service.organisation_types, :id, :name) do |builder|
+    /     = builder.check_box
+    /     %span{ class: "single_pattern" }
+    /       = builder.object.name
+    /   %span.hint
+    /     We’d like to get a sense of where different services sit in different types of organisations. For example, you can tell us whether a service is in a county, borough or district council.", include_hidden: false, label: 'Which òrganisation types is this service found in?
+    /   %span.errors
+    /     = f.error :organisation_types
+
 
     = f.input :transactional, :label => "Is this service transactional?", as: :select, collection: [['Yes', true], ['No', false]], include_blank: true, hint: "Transactional services are services that citizens complete end to end in a single instance and don’t encompass high level complexity and/or need of face to face interaction. A non-transactional service  (social care services for instance) is characterised by multiple interactions between citizen and council over time and each interaction doesn’t necessarily close a phase. This said, non-transactional services can include transactional services (identity confirmation, payment, …)."
 
