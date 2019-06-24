@@ -1,0 +1,29 @@
+%h2
+  = @service.name
+
+%h3 Steps
+%p
+  = @service.steps
+
+%h3 Patterns
+%p
+  - @service.patterns.each do |pattern|
+    .single_pattern{ class: pattern.name.parameterize }
+      = pattern.name
+
+%h3 Life events
+%p
+  - @service.life_events.each do |life_event|
+    = life_event.name
+
+%h3 Organisation type
+%p
+  - @service.organisation_types.each do |org_type|
+    = org_type
+
+%h3 Transactional
+%p
+  - if @service.transactional
+    Yes
+  - else
+    No
