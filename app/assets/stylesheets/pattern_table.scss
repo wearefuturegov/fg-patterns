@@ -2,6 +2,20 @@ body.index.patterns {
   background-color: $light_grey;
 }
 
+.single_pattern {
+  padding: 2px 7px;
+  border-radius: $border-radius;
+  display: inline-block;
+  vertical-align: middle;
+  color: $black;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+
+  &.not_pattern {
+    background-color: rgba($dark_gray, 0.2);
+  }
+}
+
 .description {
   max-width: 960px;
   h3 {
@@ -23,59 +37,82 @@ body.index.patterns {
   text-decoration: none;
 
   &.check-something {
-    background: rgba($turqoise, 0.3);
-    &:hover {
-      background: rgba($turqoise, 0.9);
-      color: #fff;
-    }
+    background: rgba($turqoise, 0.2);
   }
   &.register-for-something {
-    background: rgba($yellow, 0.3);
-    &:hover {
-      background: rgba($yellow, 0.9);
-      color: #fff;
-    }
+    background: rgba($yellow, 0.2);
   }
   &.tell-something {
-    background: rgba($purple, 0.3);
-    &:hover {
-      background: rgba($purple, 0.9);
-      color: #fff;
-    }
+    background: rgba($purple, 0.2);
   }
   &.request-something {
-    background: rgba($blue, 0.3);
-    &:hover {
-      background: rgba($blue, 0.9);
-      color: #fff;
-    }
+    background: rgba($blue, 0.2);
   }
   &.apply-for-something {
-    background: rgba($red, 0.3);
-    &:hover {
-      background: rgba($red, 0.9);
-      color: #fff;
-    }
+    background: rgba($red, 0.2);
   }
   &.book-something {
-    background: rgba($orange, 0.3);
-    &:hover {
-      background: rgba($orange, 0.9);
-      color: #fff;
-    }
+    background: rgba($orange, 0.2);
   }
-  &.update-something {
-    background: rgba($dark_purple, 0.3);
-    &:hover {
-      background: rgba($dark_purple, 0.9);
-      color: #fff;
-    }
+  &.pay-for-something {
+    background: rgba($dark_purple, 0.2);
   }
   &.fg_brand {
-    background: rgba($brand, 0.3);
-    &:hover {
-      background: rgba($brand, 0.9);
-      color: #fff;
+    background: rgba($brand, 0.2);
+  }
+}
+
+#pattern_links {
+  .single_pattern {
+    margin: 4px 2px;
+
+    &.check-something {
+      &:hover {
+        background: rgba($turqoise, 0.9);
+        color: #fff;
+      }
+    }
+    &.register-for-something {
+      &:hover {
+        background: rgba($yellow, 0.9);
+        color: #fff;
+      }
+    }
+    &.tell-something {
+      &:hover {
+        background: rgba($purple, 0.9);
+        color: #fff;
+      }
+    }
+    &.request-something {
+      &:hover {
+        background: rgba($blue, 0.9);
+        color: #fff;
+      }
+    }
+    &.apply-for-something {
+      &:hover {
+        background: rgba($red, 0.9);
+        color: #fff;
+      }
+    }
+    &.book-something {
+      &:hover {
+        background: rgba($orange, 0.9);
+        color: #fff;
+      }
+    }
+    &.pay-for-something {
+      &:hover {
+        background: rgba($dark_purple, 0.9);
+        color: #fff;
+      }
+    }
+    &.fg_brand {
+      &:hover {
+        background: rgba($brand, 0.9);
+        color: #fff;
+      }
     }
   }
 }
@@ -123,7 +160,7 @@ body.index.patterns {
   }
 }
 .active_7 {
-  .update-something {
+  .pay-for-something {
     background: rgba($dark_purple, 1);
     color: #fff;
   }

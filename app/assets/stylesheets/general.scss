@@ -8,4 +8,26 @@ html {
 .white_bg {
   background: #fff;
   border-radius: $border-radius;
+  box-shadow: 0 10px 20px rgba(213,197,206,0.07);
+}
+
+.button {
+  background-color: $brand;
+
+  &:hover {
+    background-color: darken($brand, 5%);
+  }
+  &:active {
+    background-color: darken($brand, 10%);
+  }
+  &.right {
+    float: right;
+  }
+}
+
+.container {
+  &.full_container {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
