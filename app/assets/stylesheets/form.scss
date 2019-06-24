@@ -47,6 +47,7 @@
   label input {
     & + span {
       background: $light_gray;
+      font-weight: 400;
     }
     &:hover + span {
       cursor: pointer;
