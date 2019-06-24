@@ -25,9 +25,17 @@ html {
   }
 }
 
+body.index.patterns, body.services.new {
+  background-color: $light_grey;
+}
+
 .container {
   &.full_container {
     padding-left: 0;
     padding-right: 0;
   }
+}
+
+h2 {
+  margin: 0 0 0.5em;
 }

@@ -1,28 +1,30 @@
-%h2
-  Add a new service
+.container.white_bg
+  %h2
+    Add a new service
 
-%p
-  You can add your own services to the service pattern library. You can also give us extra details like what steps they might include, what type of organisation they sit in or what type of life event they touch on for the user.
+  %p
+    You can add your own services to the service pattern library. You can also give us extra details like what steps they might include, what type of organisation they sit in or what type of life event they touch on for the user.
 
-= simple_form_for @service do |f|
+  = simple_form_for @service do |f|
 
-  = f.input :name, hint: "This is might be what the service is called in your service directory, in your communications or on your website. But also think about what a user might be looking for from a service. For example, ‘register a birth’, ‘apply for a Blue Badge’ or ‘report a flood’."
+    = f.input :name, :label => "Name of service", :placeholder => "Enter name of the service", hint: "This is might be what the service is called in your service directory, in your communications or on your website. But also think about what a user might be looking for from a service. For example, ‘register a birth’, ‘apply for a Blue Badge’ or ‘report a flood’."
 
-  = f.input :steps, hint: "This is the number of separate steps to complete in order to access an end-to-end service. For example, if users are registering a birth, they will normally be asked to book an appointment and then pay for the service."
+    = f.input :steps, hint: "This is the number of separate steps to complete in order to access an end-to-end service. For example, if users are registering a birth, they will normally be asked to book an appointment and then pay for the service."
 
-  = f.input :pattern_ids, as: :check_boxes, collection: Pattern.all, label: 'Patterns'
+    = f.input :pattern_ids, as: :check_boxes, collection: Pattern.all, label: 'Which patterns apply to this service?'
 
-  = f.input :life_event_ids, as: :check_boxes, collection: LifeEvent.all, label: 'Life events'
+    = f.input :life_event_ids, as: :check_boxes, collection: LifeEvent.all, label: 'Which life events apply to this service? (optional)'
 
-  = f.input :organisation_types, as: :check_boxes, collection: Service.organisation_types, hint: "We’d like to get a sense of where different services sit in different types of organisations. For example, you can tell us whether a service is in a county, borough or district council.", include_hidden: false
+    = f.input :organisation_types, as: :check_boxes, collection: Service.organisation_types, hint: "We’d like to get a sense of where different services sit in different types of organisations. For example, you can tell us whether a service is in a county, borough or district council.", include_hidden: false, label: 'Which òrganisation types is this service found in?'
 
-  = f.input :transactional, as: :select, collection: [['Yes', true], ['No', false]], include_blank: false, hint: "Transactional services are services that citizens complete end to end in a single instance and don’t encompass high level complexity and/or need of face to face interaction. A non-transactional service  (social care services for instance) is characterised by multiple interactions between citizen and council over time and each interaction doesn’t necessarily close a phase. This said, non-transactional services can include transactional services (identity confirmation, payment, …)."
+    = f.input :transactional, :label => "Is this service transactional?", as: :select, collection: [['Yes', true], ['No', false]], include_blank: true, hint: "Transactional services are services that citizens complete end to end in a single instance and don’t encompass high level complexity and/or need of face to face interaction. A non-transactional service  (social care services for instance) is characterised by multiple interactions between citizen and council over time and each interaction doesn’t necessarily close a phase. This said, non-transactional services can include transactional services (identity confirmation, payment, …)."
 
-  %fieldset
-    %legend Your details
-    We’re asking for your email address and the name of the organisation that you work for.
-    This is so that our moderators can follow up with you if they have a question about the services you have suggested. It might be that we just need a little more detail to complete the entry.
-    = f.input :suggester_email, label: 'Your email'
-    = f.input :suggester_organisation, label: 'Your organisation'
+    %br
+    %fieldset
+      %legend Your details
+      %p We’re asking for your email address and the name of the organisation that you work for.
+      %p This is so that our moderators can follow up with you if they have a question about the services you have suggested. It might be that we just need a little more detail to complete the entry.
+      = f.input :suggester_email, label: 'Your email', placeholder: 'Your email'
+      = f.input :suggester_organisation, label: 'Your organisation', placeholder: 'Your organisation'
 
-  = f.button :submit, "Create service"
+    = f.button :submit, "Create service", class: "button right"

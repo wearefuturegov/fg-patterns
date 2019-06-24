@@ -1,0 +1,18 @@
+.simple_form {
+  label.required:after {
+    content: "";
+  }
+  .input {
+    margin-bottom: 25px;
+  }
+}
+.simple_form span.error, .simple_form span.hint {
+  line-height: 1.4;
+  margin-top: 0;
+  font-size: 80%;
+  max-width: 623px;
+}
+
+.service_transactional select {
+  width: 100px;
+}
