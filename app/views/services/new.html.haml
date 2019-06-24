@@ -8,13 +8,16 @@
 
   = f.input :name, hint: "This is might be what the service is called in your service directory, in your communications or on your website. But also think about what a user might be looking for from a service. For example, ‘register a birth’, ‘apply for a Blue Badge’ or ‘report a flood’."
 
-  = f.input :organisation_types, as: :check_boxes, collection: Service.organisation_types, hint: "We’d like to get a sense of where different services sit in different types of organisations. For example, you can tell us whether a service is in a county, borough or district council.", include_hidden: false
+  = f.input :steps, hint: "This is the number of separate steps to complete in order to access an end-to-end service. For example, if users are registering a birth, they will normally be asked to book an appointment and then pay for the service."
 
   = f.input :pattern_ids, as: :check_boxes, collection: Pattern.all, label: 'Patterns'
 
+  = f.input :life_event_ids, as: :check_boxes, collection: LifeEvent.all, label: 'Life events'
+
+  = f.input :organisation_types, as: :check_boxes, collection: Service.organisation_types, hint: "We’d like to get a sense of where different services sit in different types of organisations. For example, you can tell us whether a service is in a county, borough or district council.", include_hidden: false
+
   = f.input :transactional, as: :select, collection: [['Yes', true], ['No', false]], include_blank: false, hint: "Transactional services are services that citizens complete end to end in a single instance and don’t encompass high level complexity and/or need of face to face interaction. A non-transactional service  (social care services for instance) is characterised by multiple interactions between citizen and council over time and each interaction doesn’t necessarily close a phase. This said, non-transactional services can include transactional services (identity confirmation, payment, …)."
 
-  = f.input :steps, hint: "This is the number of separate steps to complete in order to access an end-to-end service. For example, if users are registering a birth, they will normally be asked to book an appointment and then pay for the service."
   %fieldset
     %legend Your details
     We’re asking for your email address and the name of the organisation that you work for.
@@ -22,5 +25,4 @@
     = f.input :suggester_email, label: 'Your email'
     = f.input :suggester_organisation, label: 'Your organisation'
 
-  = f.input :life_event_ids, as: :check_boxes, collection: LifeEvent.all, label: 'Life events'
   = f.button :submit, "Create service"
