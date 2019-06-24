@@ -3,7 +3,6 @@ class ServicesController < ApplicationController
   def new
     @service = Service.new
   end
-
   def create
     @service = Service.new(service_params)
     if @service.save

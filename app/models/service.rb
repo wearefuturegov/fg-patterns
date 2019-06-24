@@ -15,13 +15,13 @@ class Service < ApplicationRecord
 
   def self.organisation_types
     [
-      'County council',
-      'District council',
-      'Borough council',
-      'City council',
-      'Unitary authority',
-      'London borough',
-      'Metropolitan borough'
+      ['County council'],
+      ['District council'],
+      ['Borough council'],
+      ['City council'],
+      ['Unitary authority'],
+      ['London borough'],
+      ['Metropolitan borough']
     ]
   end
 
