@@ -49,73 +49,58 @@
     }
     &:hover + span {
       cursor: pointer;
-      background: darken($light_gray, 10%);
+      background: darken($light_gray, 5%);
       &.check-something {
-        background: rgba($turqoise, 0.9);
-        color: #fff;
+        background: rgba($turqoise, 0.7);
       }
       &.register-for-something {
-        background: rgba($yellow, 0.9);
-        color: #fff;
+        background: rgba($yellow, 0.7);
       }
       &.tell-something {
-        background: rgba($purple, 0.9);
-        color: #fff;
+        background: rgba($purple, 0.7);
       }
       &.request-something {
-        background: rgba($blue, 0.9);
-        color: #fff;
+        background: rgba($blue, 0.7);
       }
       &.apply-for-something {
-        background: rgba($red, 0.9);
-        color: #fff;
+        background: rgba($red, 0.7);
       }
       &.book-something {
-        background: rgba($orange, 0.9);
-        color: #fff;
+        background: rgba($orange, 0.7);
       }
       &.pay-for-something {
-        background: rgba($dark_purple, 0.9);
-        color: #fff;
+        background: rgba($dark_purple, 0.7);
       }
       &.fg_brand {
-        background: rgba($brand, 0.9);
-        color: #fff;
+        background: rgba($brand, 0.7);
       }
     }
     &:checked + span {
-      background: darken($light_gray, 10%);
+      background: darken($light_gray, 50%);
+      color: #fff;
       &.check-something {
         background: rgba($turqoise, 1);
-        color: #fff;
       }
       &.register-for-something {
         background: rgba($yellow, 1);
-        color: #fff;
       }
       &.tell-something {
         background: rgba($purple, 1);
-        color: #fff;
       }
       &.request-something {
         background: rgba($blue, 1);
-        color: #fff;
       }
       &.apply-for-something {
         background: rgba($red, 1);
-        color: #fff;
       }
       &.book-something {
         background: rgba($orange, 1);
-        color: #fff;
       }
       &.pay-for-something {
         background: rgba($dark_purple, 1);
-        color: #fff;
       }
       &.fg_brand {
         background: rgba($brand, 1);
-        color: #fff;
       }
     }
   }

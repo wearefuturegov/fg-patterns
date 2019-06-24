@@ -22,6 +22,9 @@ html {
   }
   &.right {
     float: right;
+    @include mobile {
+      width: 100%;
+    }
   }
 }
 
