@@ -10,7 +10,7 @@
 
   = f.input :steps, hint: "This is the number of separate steps to complete in order to access an end-to-end service. For example, if users are registering a birth, they will normally be asked to book an appointment and then pay for the service."
 
-  = f.input :pattern_ids, as: :check_boxes, collection: Pattern.all, label: 'Patterns'
+  = f.association :patterns, as: :check_boxes, collection: Pattern.all, label: 'Patterns', hint: "These are the common interactions that we can spot once we have identified the steps of a service. Things like ‘Check something’ or ‘Register for something’. A service can involve more than one pattern."
 
   = f.input :life_event_ids, as: :check_boxes, collection: LifeEvent.all, label: 'Life events'
 

@@ -1,10 +1,13 @@
 class Service < ApplicationRecord
-  validates :name, presence: true
+  validates :name, :steps, :patterns, :organisation_types, presence: true
+  validates :suggester_email, :suggester_organisation, presence: true, unless: :seed
 
   serialize :organisation_types, Array
 
   has_and_belongs_to_many :patterns, as: :service_patterns
   has_and_belongs_to_many :life_events
+
+  attr_accessor :seed # Is set to true during seeding process so that suggester validations can be skipped.
 
   def self.organisation_types
     [
@@ -17,4 +20,5 @@ class Service < ApplicationRecord
       'Metropolitan borough'
     ]
   end
+
 end

@@ -23,7 +23,7 @@ RSpec.feature "Service creation", :type => :feature do
     fill_in 'Your email', with: 'example@example.com'
     fill_in 'Your organisation', with: 'ECC'
 
-    pattern_checkbox = within('.service_pattern_ids') { find("input[type='checkbox']", match: :first) }
+    pattern_checkbox = within('.service_patterns') { find("input[type='checkbox']", match: :first) }
     pattern_checkbox.set(:true)
 
     life_event_checkbox = within('.service_life_event_ids') { find("input[type='checkbox']", match: :first) }
