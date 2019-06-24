@@ -1,17 +1,16 @@
 .table {
+  .head_row {
+    @include mobile {
+      display: none;
+    }
+  }
   .row {
     @include grid-container;
 
     .table__head, .table__data {
       min-height: 1px;
     }
-    .two_col {
-      @include grid-column(12, $mobile_grid);
 
-      @include desktop {
-        @include grid-column(2);
-      }
-    }
     .table__head {
       text-transform: uppercase;
       color: rgba($dark_gray, 0.8);
@@ -62,8 +61,18 @@
       &:active::after {
         opacity: 0;
       }
+
+      @include mobile {
+        .service__name {
+          font-size: 125%;
+          font-weight: bold;
+        }
+      }
     }
     .table__data {
+      .only_mobile {
+        margin-top: 10px;
+      }
     }
   }
 }
