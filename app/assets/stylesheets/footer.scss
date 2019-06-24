@@ -1,0 +1,22 @@
+
+footer {
+  background: $brand;
+  width: 100%;
+  margin-top: 50px;
+
+  .fg_logo {
+    display: inline-block;
+    width: 175px;
+    height: 25px;
+    background: image-url("fg_logo_white.svg") center center no-repeat;
+    background-size: 100%;
+    margin-right: 25px;
+  }
+  .essex_logo {
+    display: inline-block;
+    width: 169px;
+    height: 25px;
+    background: image-url("essex_logo.png") center center no-repeat;
+    background-size: 100%;
+  }
+}
