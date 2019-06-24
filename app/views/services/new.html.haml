@@ -12,10 +12,9 @@
 
   %div.input.check_boxes.required.service_patterns.field_with_hint
     = f.label :pattern_ids, "Patterns", required: true
-    = f.collection_check_boxes(:pattern_ids, Pattern.all, :id, :name) do |pattern|
-      = pattern.check_box
-      %span
-        = pattern.label
+    = f.collection_check_boxes(:pattern_ids, Pattern.all, :id, :name) do |builder|
+      = builder.check_box
+      %span= builder.object.name
     %span.hint
     %span.errors
       = f.error :pattern_ids
