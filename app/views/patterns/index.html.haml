@@ -11,7 +11,7 @@
     - else
       .description
         %h3 All patterns
-        %p We’ve talked about why we think having  a common set of service patterns across local government would be a great idea.
+        %p We’ve talked about why we think having a common set of service patterns across local government would be a great idea.
 
         %p
           So far, we’ve mapped 157 transactional services, covering everything from ‘register a birth’ to ‘report a pothole’.
@@ -32,7 +32,7 @@
     .table__head.quarter Life events
     .table__head.two_col Organisation
   - @services.each do |service|
-    .row.data_row
+    =link_to service_path(service), class: 'row data_row' do
       .table__data.third.service__name
         = service.name
       .table__data.quarter
