@@ -1,3 +1,9 @@
 %h3
   Edit
   = @service.name
+
+  = simple_form_for [:admin, @service] do |f|
+
+    = render 'shared/services/form_fields', service: @service, f: f
+
+    = f.button :submit, "Publish this service", class: "button right"

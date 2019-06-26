@@ -11,5 +11,8 @@
 
   = render 'layouts/fg_header'
   %body{:class => page_class}
+    - if flash[:notice]
+      %div.notice
+        = flash[:notice]
     = yield
   = render 'layouts/footer'

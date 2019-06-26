@@ -1,0 +1,48 @@
+= f.input :name, :label => "Name of service", :placeholder => "Enter name of the service", hint: "This is might be what the service is called in your service directory, in your communications or on your website. But also think about what a user might be looking for from a service. For example, ‘register a birth’, ‘apply for a Blue Badge’ or ‘report a flood’."
+
+= f.input :steps, hint: "This is the number of separate steps to complete in order to access an end-to-end service. For example, if users are registering a birth, they will normally be asked to book an appointment and then pay for the service."
+
+.input.check_boxes.required.service_patterns.field_with_hint.convert_checkboxes
+  %div= f.label :pattern_ids, "Which patterns apply to this service?", required: true
+  %span.hint
+    These are the common interactions that we can spot once we have identified the steps of a service. Things like ‘Check something’ or ‘Register for something’. A service can involve more than one pattern.
+  = f.collection_check_boxes(:pattern_ids, Pattern.all, :id, :name) do |builder|
+    = builder.check_box
+    %span{ class: "single_pattern #{builder.object.name.parameterize}" }
+      = builder.object.name
+  %span.errors
+    = f.error :pattern_ids
+
+.input.check_boxes.required.service_life_event_ids.field_with_hint.convert_checkboxes
+  %div= f.label :life_event_ids, "Which life events apply to this service? (optional)", required: true
+  %span.hint
+    These are the common interactions that we can spot once we have identified the steps of a service. Things like ‘Check something’ or ‘Register for something’. A service can involve more than one pattern.
+  = f.collection_check_boxes(:life_event_ids, LifeEvent.all, :id, :name) do |builder|
+    = builder.check_box
+    %span{ class: "single_pattern #{builder.object.name.parameterize}" }
+      = builder.object.name
+  %span.errors
+    = f.error :life_event_ids
+
+.input.check_boxes.required.service_organisation_types.field_with_hint.convert_checkboxes
+  %div= f.label :organisation_types, "Which organisation types is this service found in?", required: true
+  %span.hint
+    We’d like to get a sense of where different services sit in different types of organisations. For example, you can tell us whether a service is in a county, borough or district council.", include_hidden: false, label: 'Which òrganisation types is this service found in?
+  = f.collection_check_boxes(:organisation_types, Service.organisation_types, :first, :last, include_hidden: false) do |builder|
+    = builder.check_box
+    %span{ class: "single_pattern" }
+      = builder.object.first
+  %span.errors
+    = f.error :organisation_types
+
+
+= f.input :transactional, :label => "Is this service transactional?", as: :select, collection: [['Yes', true], ['No', false]], include_blank: true, hint: "Transactional services are services that citizens complete end to end in a single instance and don’t encompass high level complexity and/or need of face to face interaction. A non-transactional service  (social care services for instance) is characterised by multiple interactions between citizen and council over time and each interaction doesn’t necessarily close a phase. This said, non-transactional services can include transactional services (identity confirmation, payment, …)."
+
+%br
+%fieldset
+  .description
+    %legend Your details
+    %p We’re asking for your email address and the name of the organisation that you work for.
+    %p This is so that our moderators can follow up with you if they have a question about the services you have suggested. It might be that we just need a little more detail to complete the entry.
+  = f.input :suggester_email, label: 'Your email', placeholder: 'Your email'
+  = f.input :suggester_organisation, label: 'Your organisation', placeholder: 'Your organisation'

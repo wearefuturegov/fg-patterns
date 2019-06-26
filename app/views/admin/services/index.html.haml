@@ -11,15 +11,15 @@
     %th
       Date submitted
     %th
-- @services.each do |service|
-  %tr
-    %td
-      = service.name
-    %td
-      = service.suggester_name
-    %td
-      = service.suggester_organisation
-    %td
-      = service.created_at
-    %td
-      = link_to "Moderate service", edit_admin_service_path(service)
+  - @services.each do |service|
+    %tr
+      %td
+        = service.name
+      %td
+        = service.suggester_name
+      %td
+        = service.suggester_organisation
+      %td
+        = service.created_at
+      %td
+        = link_to "Moderate service", edit_admin_service_path(service)
