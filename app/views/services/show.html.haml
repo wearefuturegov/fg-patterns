@@ -1,30 +1,27 @@
-.container
-  %h2
-    = @service.name
+.container#service_show
+  %h1= @service.name
 
-  %h3 Steps
-  %p
-    = @service.steps
+  %p.bold Steps
+  %p= @service.steps
 
-  %h3 Patterns
-  %p
-    - @service.patterns.each do |pattern|
-      .single_pattern{ class: pattern.name.parameterize }
-        = pattern.name
+  %p.bold Patterns
+  - @service.patterns.each do |pattern|
+    .single_pattern{ class: pattern.name.parameterize }
+      = pattern.name
 
-  %h3 Life events
-  %p
+  - if @service.life_events.any?
+    %p.bold Life events
     - @service.life_events.each do |life_event|
-      = life_event.name
+      .single_pattern.not_pattern
+        = life_event.name
 
-  %h3 Organisation type
-  %p
-    - @service.organisation_types.each do |org_type|
-      = org_type
+  %p.bold Organisation type
+  - @service.organisation_types.each do |org_type|
+    = org_type
 
-  %h3 Transactional
+  %p.bold Transactional
   %p
     - if @service.transactional
-      Yes
+      Yes, this service is transactional
     - else
-      No
+      No, this is a non transactional service
