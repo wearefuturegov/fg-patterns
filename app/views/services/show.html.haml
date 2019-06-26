@@ -1,30 +1,39 @@
-.container
-  %h2
-    = @service.name
+.container.breadcrumbs
+  =link_to "Home", root_path
+  %span.arrow >
+  =link_to "Services", patterns_path
+  %span.arrow >
+  =@service.name
+  service
 
-  %h3 Steps
-  %p
-    = @service.steps
+.container.white_bg#service_show
+  %h1= @service.name
 
-  %h3 Patterns
-  %p
+  %p.bold Steps
+  %p= @service.steps
+
+  %p.bold Patterns
+  #pattern_links
     - @service.patterns.each do |pattern|
-      .single_pattern{ class: pattern.name.parameterize }
-        = pattern.name
+      = link_to pattern.name, patterns_path(selected: pattern.id), class: "single_pattern #{pattern.name.parameterize}", title: "View services under the #{pattern.name} pattern"
 
-  %h3 Life events
-  %p
+  - if @service.life_events.any?
+    %p.bold Life events
     - @service.life_events.each do |life_event|
-      = life_event.name
+      .single_pattern.not_pattern
+        = life_event.name
 
-  %h3 Organisation type
-  %p
-    - @service.organisation_types.each do |org_type|
-      = org_type
+  %p.bold Organisation type
+  - @service.organisation_types.each do |org_type|
+    = org_type
 
-  %h3 Transactional
+  %p.bold Transactional
   %p
     - if @service.transactional
-      Yes
+      Yes, this service is transactional
     - else
-      No
+      No, this is a non transactional service
+
+
+.container.full_container
+  = link_to "Add a new service", new_service_path, class: 'button right'
