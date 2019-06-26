@@ -1,0 +1,25 @@
+%h3 Services awaiting approval
+
+%table
+  %tr
+    %th
+      Name
+    %th
+      Added by
+    %th
+      Organisation
+    %th
+      Date submitted
+    %th
+- @services.each do |service|
+  %tr
+    %td
+      = service.name
+    %td
+      = service.suggester_name
+    %td
+      = service.suggester_organisation
+    %td
+      = service.created_at
+    %td
+      = link_to "Moderate service", edit_admin_service_path(service)

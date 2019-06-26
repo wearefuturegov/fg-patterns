@@ -16,6 +16,9 @@ class ServicesController < ApplicationController
     @service = Service.find(params[:id])
   end
 
+  def index
+  end
+
   private
 
   def service_params
