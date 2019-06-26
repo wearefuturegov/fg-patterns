@@ -63,6 +63,10 @@
     margin: 4px 2px;
     padding: 5px 20px;
     font-weight: 600;
+
+    &:hover {
+      text-decoration: none;
+    }
     &.check-something {
       &:hover {
         background: rgba($turqoise, 0.9);
@@ -164,6 +168,8 @@
 }
 
 .pattern_table {
+  padding-bottom: 0;
+  padding-top: 0;
   .single_pattern {
     font-size: 0.75em;
   }
