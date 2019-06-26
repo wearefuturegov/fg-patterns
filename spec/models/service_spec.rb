@@ -31,6 +31,11 @@ RSpec.describe Service, type: :model do
     expect(Service.new(attrs)).to be_invalid
   end
 
+  it 'is invalid without suggester name' do
+    attrs = FactoryBot.attributes_for(:service).except(:suggester_name)
+    expect(Service.new(attrs)).to be_invalid
+  end
+
   it 'is invalid without suggester email' do
     attrs = FactoryBot.attributes_for(:service).except(:suggester_email)
     expect(Service.new(attrs)).to be_invalid

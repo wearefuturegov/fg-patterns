@@ -20,6 +20,7 @@ RSpec.feature "Service creation", :type => :feature do
 
     fill_in 'Steps', with: "Here are the steps required"
 
+    fill_in 'Your name', with: 'Sir Vice'
     fill_in 'Your email', with: 'example@example.com'
     fill_in 'Your organisation', with: 'ECC'
 
@@ -39,6 +40,7 @@ RSpec.feature "Service creation", :type => :feature do
     expect(service.name).to eq('Name of a new service')
     expect(service.organisation_types).to eq(['County council'])
     expect(service.steps).to eq('Here are the steps required')
+    expect(service.suggester_name).to eq('Sir Vice')
     expect(service.suggester_email).to eq('example@example.com')
     expect(service.suggester_organisation).to eq('ECC')
     expect(service.patterns.first).to eq(Pattern.first)
