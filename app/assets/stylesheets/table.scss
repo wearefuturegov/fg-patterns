@@ -30,6 +30,7 @@
       -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 0.2);
       transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 0.2);
       -webkit-font-smoothing: antialiased;
+      color: $black;
       &::after {
         content: '';
         position: absolute;
@@ -42,13 +43,17 @@
         transition: opacity 0.3s ease-in-out;
         top: 0;
       }
-      &:hover {
+      &:hover, &:focus {
         cursor: pointer;
         transform: translateZ(0);
         -webkit-transform: perspective(1px) scale(1.005, 1.005);
         transform: perspective(1px) scale(1.005, 1.005);
+        outline: none;
       }
-      &:hover::after {
+      &:focus {
+        border: 1px solid $brand;
+      }
+      &:hover::after, &:focus::after {
         opacity: 1;
       }
       &:active {
