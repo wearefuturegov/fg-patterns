@@ -1,0 +1,12 @@
+= content_for :message_body do
+  %p
+    = "Dear #{@suggester_name},"
+  %p
+    Thanks for contributing to the LocalGov Patterns project.
+  %p
+    This is to let you know that we’ve looked at your service suggestion and added it to our service pattern library. You can view it at the
+    = link_to 'LocalGov Patterns Library here.', patterns_url
+  %p
+    We’ll email you when we have any more news to share. You can unsubscribe to these updates at any time by ticking the box below.
+  %p
+    = "If you have any other comments, queries or suggestions about LocalGov Patterns then you can email us at: #{ENV['ADMIN_EMAIL']}"

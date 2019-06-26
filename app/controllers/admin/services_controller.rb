@@ -9,7 +9,12 @@ class Admin::ServicesController < Admin::BaseController
 
   def update
     @service = Service.find(params[:id])
+    new_service = (@service.status == 'awaiting_approval' ? true : false)
+
     if @service.update_attributes(service_params.merge(status: 'published'))
+      if new_service
+        ServiceMailer.service_approved(@service).deliver
+      end
       flash[:notice] = "Service #{@service.name} was published"
       redirect_to patterns_path
     else

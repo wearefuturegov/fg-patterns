@@ -32,5 +32,10 @@ RSpec.feature "Service moderation", :type => :feature do
     service.reload
     expect(page).to have_text("Service #{service.name} was published")
     expect(page.find('.pattern_table')).to have_text(service.name)
+
+    deliveries = ActionMailer::Base.deliveries
+    email_count = deliveries.count
+    deliveries[email_count-1].from.should include(ENV['ADMIN_EMAIL'])
+    deliveries[email_count-1].to.should include(service.suggester_email)
   end
 end

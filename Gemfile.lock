@@ -144,6 +144,7 @@ GEM
     mountain_view (0.14.0)
       rails (>= 3.2.0)
     msgpack (1.2.10)
+    mustermann (1.0.3)
     neat (3.0.1)
       sass (~> 3.4)
       thor (~> 0.19)
@@ -154,6 +155,8 @@ GEM
     public_suffix (3.1.0)
     puma (3.12.1)
     rack (2.0.7)
+    rack-protection (2.0.5)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.3)
@@ -203,6 +206,7 @@ GEM
       rspec-support (~> 3.8.0)
     rspec-support (3.8.2)
     ruby_dep (1.5.0)
+    ruby_http_client (3.3.0)
     ruby_parser (3.13.1)
       sexp_processor (~> 4.9)
     rubyzip (1.2.3)
@@ -220,10 +224,20 @@ GEM
     selenium-webdriver (3.142.3)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
+    sendgrid-ruby (5.3.0)
+      ruby_http_client (~> 3.3.0)
+      sinatra (>= 1.4.7, < 3)
+    sendgrid_actionmailer_adapter (0.2.2)
+      sendgrid-ruby (~> 5.0)
     sexp_processor (4.12.1)
     simple_form (4.1.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
+    sinatra (2.0.5)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.5)
+      tilt (~> 2.0)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -280,6 +294,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
+  sendgrid_actionmailer_adapter
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)

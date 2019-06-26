@@ -6,6 +6,8 @@ class ServicesController < ApplicationController
   def create
     @service = Service.new(service_params)
     if @service.save
+      ServiceMailer.thankyou(@service).deliver
+      ServiceMailer.new_service(@service).deliver
       render 'confirmation'
     else
       render 'new'

@@ -46,6 +46,14 @@ RSpec.feature "Service creation", :type => :feature do
 
     visit patterns_path(selected: service.patterns.first.id)
     expect(page).to_not have_text(service.name)
+
+    deliveries = ActionMailer::Base.deliveries
+    email_count = deliveries.count
+
+    deliveries[email_count-2].from.should include(ENV['ADMIN_EMAIL'])
+    deliveries[email_count-2].to.should include(service.suggester_email)
+    deliveries[email_count-1].from.should include(ENV['ADMIN_EMAIL'])
+    deliveries[email_count-1].to.should include(ENV['ADMIN_EMAIL'])
   end
 
 end
