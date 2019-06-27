@@ -29,7 +29,7 @@
         %p
           Alternatively, if you want to amend or comment on existing services, you can email us directly at
           %strong
-            = ENV['ADMIN_EMAIL']
+            =mail_to ENV['ADMIN_EMAIL']
 
 .container.full_container
   = link_to "Add a new service", new_service_path, class: 'button right'
