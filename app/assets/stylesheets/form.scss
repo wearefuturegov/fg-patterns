@@ -49,19 +49,51 @@
     width: 100%;
     height: 35px;
     border-radius: $border-radius;
+    opacity: 1;
 
     &:hover {
       cursor: pointer;
     }
   }
   label input {
-    & + span {
+    & + .blocker {
+      background: #fff;
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      height: 35px;
+    }
+    & + .blocker + span {
       background: $light_gray;
       font-weight: 400;
       z-index: 10;
-      padding-left: 20px;
+      position: inherit;
+      &.check-something {
+        background: rgba($turqoise, 0.2);
+      }
+      &.register-for-something {
+        background: rgba($yellow, 0.2);
+      }
+      &.tell-something {
+        background: rgba($purple, 0.2);
+      }
+      &.request-something {
+        background: rgba($blue, 0.2);
+      }
+      &.apply-for-something {
+        background: rgba($red, 0.2);
+      }
+      &.book-something {
+        background: rgba($orange, 0.2);
+      }
+      &.pay-for-something {
+        background: rgba($dark_purple, 0.2);
+      }
+      &.fg_brand {
+        background: rgba($brand, 0.2);
+      }
     }
-    &:hover + span {
+    &:hover + .blocker + span {
       cursor: pointer;
       background: darken($light_gray, 5%);
       &.check-something {
@@ -89,7 +121,7 @@
         background: rgba($brand, 0.7);
       }
     }
-    &:checked + span {
+    &:checked + .blocker + span {
       background: darken($light_gray, 50%);
       color: #fff;
       &.check-something {

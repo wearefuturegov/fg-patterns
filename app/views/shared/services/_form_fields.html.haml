@@ -8,6 +8,7 @@
     These are the common interactions that we can spot once we have identified the steps of a service. Things like ‘Check something’ or ‘Register for something’. A service can involve more than one pattern.
   = f.collection_check_boxes(:pattern_ids, Pattern.all, :id, :name) do |builder|
     = builder.check_box
+    .blocker
     %span{ class: "single_pattern #{builder.object.name.parameterize}" }
       = builder.object.name
   %span.errors
@@ -19,6 +20,7 @@
     These are the common interactions that we can spot once we have identified the steps of a service. Things like ‘Check something’ or ‘Register for something’. A service can involve more than one pattern.
   = f.collection_check_boxes(:life_event_ids, LifeEvent.all, :id, :name) do |builder|
     = builder.check_box
+    .blocker
     %span{ class: "single_pattern #{builder.object.name.parameterize}" }
       = builder.object.name
   %span.errors
@@ -30,6 +32,7 @@
     We’d like to get a sense of where different services sit in different types of organisations. For example, you can tell us whether a service is in a county, borough or district council.", include_hidden: false, label: 'Which òrganisation types is this service found in?
   = f.collection_check_boxes(:organisation_types, Service.organisation_types, :first, :last, include_hidden: false) do |builder|
     = builder.check_box
+    .blocker
     %span{ class: "single_pattern" }
       = builder.object.first
   %span.errors
