@@ -11,6 +11,7 @@ FactoryBot.define do
     patterns { [Pattern.first, Pattern.last] }
     life_events { [LifeEvent.first, LifeEvent.last]}
     organisation_types { [Service.organisation_types.first, Service.organisation_types.last] }
+    transactional { true }
     suggester_name { "Sir Vice" }
     suggester_email { "exampe@wearefuturegov.com" }
     suggester_organisation { "FutureGov" }
