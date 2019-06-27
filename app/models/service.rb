@@ -9,7 +9,7 @@ class Service < ApplicationRecord
 
   before_create :set_status, unless: :seed
 
-  scope :published, -> { where status: 'published' }
+  scope :published, -> { where(status: 'published').order('LOWER(name)e') }
 
   attr_accessor :seed # Is set to true during seeding process so that suggester validations can be skipped.
 
