@@ -1,43 +1,56 @@
-﻿Name,Sub-services,Life event link
+﻿Name,Sub-services,Life event link,Notes
 Report a treasure find,"A. Report to Coroner's office > Contact Liaison Officers (email)
 
-B. Report to Coroner's office > Contact Liaison Officers (phone)",
+B. Report to Coroner's office > Contact Liaison Officers (phone)",,
 Upload a local activity,"A. Go to website > Register (online) > Login > Add an activity (online)
 
-B. Go to website > Login > Add an activity (online)",
-Upload a local activity,Go to website > Submit an event (online) > Receive decision for submission (email?),
-Find a youth work placement ,Email > Be contacted (email/phone) ,Finding a job
-Refer a male youth to the Good Man mentoring programme,A. Fill in form (online) > Get contacted (email/phone),
-Report a flood,"A. Fill in a form (online) > Get notification of submission > Get response if possible or update about next steps > eg site visit >  Be updated about status/actions > receive final update about report
+B. Go to website > Login > Add an activity (online)",,
+Upload a local activity,Go to website > Submit an event (online) > Receive decision for submission (email),,
+Find a youth work placement ,Email > Get contacted (email/phone) ,Finding a job,
+Refer a male youth to the mentoring programme,A. Fill in form (online) > Get contacted (email/phone),,
+Report a flood,"A. Fill in a form (online) > Get notification of submission > Get response if possible or update about next steps (eg, site visit) >  Be updated about status/actions > receive final update about report
 
 B. Report by email > Get notification about repot with SLA > Get response if possible or update about next steps > Receive final update about report
 
-- Might email (most common) to get updates if haven't heard yet",
+- Might email (most common) to get updates if haven't heard yet",,
 Report something,"A. Get directed to the right authority > Report to Highways authority > Report something > Select from options > Check if Highway authority is already aware of it > Get an issue reference number
 
 B. Get directed to the right authority > Report to Highways authority > Report something > Select from options > Check if Highways Authority is already aware of it > Upload a picture and fill in a form > Get a reference number
 
-C. Get directed to the right authority > Report to Highways authority > Report something > Select from options > if it is about Traffic Lights not working/out of sync OR flooding OR tree in the middle of the street (if severe and urgent conditions) > Call ",Daily life
-Report lost/stolen Blue Badge,Email > Fill in form (PDF attachment) > Pay later (online?),Being/becoming disabled
-Report a Blue Badge misuse,Email ,Being/becoming disabled
+C. Get directed to the right authority > Report to Highways authority > Report something > Select from options > if it is about Traffic Lights not working/out of sync OR flooding OR tree in the middle of the street (if severe and urgent conditions) > Call ",,
+Report lost/stolen Blue Badge,Email > Fill in form (PDF attachment) > Pay later (online),Being/becoming disabled,
+Report a Blue Badge misuse,Email ,Being/becoming disabled,
 Apply for a school place - step 04: Get offer > Decide on offer,"A. Reject offer (email)
 
 B. Accept offer = do nothing
 
-","Starting/attending school, Moving somewhere"
-Change of circumstances/moving - no longer need travel?,Email to cancel,Moving somewhere
-Tell council that a child is missing from education (not going to school regularly),"A. Fill in form (online) > Submit
+","Starting/attending school, Moving somewhere",
+Change of circumstances/moving - no longer need travel,Email to cancel,Moving somewhere,
+Tell council that a child is missing from education,"A. Fill in form (online) > Submit
 
 B. Call 
 
-C. Email",Starting/attending school
+C. Email",Starting/attending school,
 Complain about a councillor's conduct,"A. Download form > Email it
-B. Download form > Mail it",
-Create your own petition,Register > ?,
-Sign a petition,Select petition > Fill in details > Sign it,
-Report abuse or neglect,Call,
-(NT) Carer  - refer a young carer,"A. Fill in form (online) > get an assessment for referred (?)
-B. Email > ?",Be/becoming a carer
- Carers  - give feedback about Short Breaks service,Fill in form (online),Be/becoming a carer
-Report a fraud,Fill in form (online),
-Give feedback,Fill in form (online),Daily life
+B. Download form > Mail it",,
+Create your own petition,Register > ?,,Nic to check
+Sign a petition,Select petition > Fill in details > Sign it,,
+Report abuse or neglect,Call,,
+"(NT) As a carer, refer a young carer","A. Fill in form (online) > Get an assessment for referred
+B. Email",Being/becoming a carer,
+" As a carer, give feedback about Short Breaks service",Fill in form (online),Being/becoming a carer,
+Report a fraud,Fill in form (online),,
+Give feedback,Fill in form (online),,
+Return library item,"A. Return in person
+
+B. Login account (ebooks) > Return item ",,
+Start a book group,Sign-up for a book group card > Create book group > Reserve books for group > Meet > Finish book and return,,
+Change information about Blue Badge application,"A. If name/address changes > Provide scan of evidence > Email
+
+B. If name/address changes > Provide scan of evidence > Mail",Being/becoming disabled,
+Renew a Blue Badge,"Get renewal letter via post > Fill in form (online) > Upload supporting documents > Get confirmation > Get decision (email/post) > Pay (online)
+
+",Being/becoming disabled,
+Return a Blue Badge ,Mail it back,Being/becoming disabled,
+Update address for bus pass,"A. Call
+B. Email ",Retiring,

@@ -1,31 +1,30 @@
-﻿Name,Sub-services,Life event link
-Order certificates and copies,Order a certificate (online) > Pay (by card/cheque/cash),"Having children, Getting married/civil partnership, Going through bereavement"
+﻿Name,Sub-services,Life event link,Notes
+Order certificates and copies,Order a certificate (online) > Pay (by card/cheque/cash),"Having children, Getting married/civil partnership, Going through bereavement",
 Get something repaired at Record Office,"A. Fill in enquiry form (online) > Get a quote (later)
 
 B. Send an email
-",
+",,
 Get a copy of the Record Office holdings,"Send a request (via email)
-",
+",,
 Get a document digitised at Record Office,"A. Fill in enquiry form (online) > Get a quote (later)
 
 B. Send an email
-",
+",,
 Get the support of Record Office staff to complete a task,"A. Fill in enquiry form (online) > Get a quote (later)
 
 B. Send an email
-",
-Request an asbestos collection,"A. Current process - Provide a few details and request a callback using online form > Business team contact customer to find out more details (weight, size of asbestos plus address and contact details etc) > Business team work out a quote for customer (% covered by council) > arrange for collection (collected by a third party)
-B. New process - Fill in the new online form which collects all details needed (size, weight, customer address etc). Form provides an estimated quote > Business team contact customer to finalise quote (% covered by council) > Arrange for collection (by a third party)",
-Claim a refund on nappies,Request a refund (online form)> Attach evidence (including birth certificate) > Checked > Payment issued back,Having children
-Request repainting of a disabled parking bay,Call,Being/becoming disabled
-Remove a disabled parking bay,Call,Being/becoming disabled
-(NT) Challenge a Penalty Charge Notice (PCN) ,Fill in details > ?,
-Replace a bus pass (lost/stolen),Call > Pay?,Retiring
-Apply for a school place - step 05: Get onto waiting list,"A. Automatically on a waiting list for schools higher in the list than offered school >  Check waiting list status (online - yer 7/phone) > get offer (letter) > Decide on offer (email)
+",,
+Request an asbestos collection,"A. Current process - Provide a few details and request a callback using online form > Business team contact customer to find out more details (weight, size of asbestos plus address and contact details etc) > Business team work out a quote for customer (% covered by council) > arrange for collection (collected by a third party)",,
+Claim a refund on nappies,Request a refund (online form)> Attach evidence (including birth certificate) > Checked > Payment issued back,Having children,
+Request repainting of a disabled parking bay,Call,Being/becoming disabled,
+Remove a disabled parking bay,Call,Being/becoming disabled,
+(NT) Challenge a Penalty Charge Notice (PCN) ,Fill in details ,,
+Replace a bus pass (lost/stolen),Call > Pay,Retiring,
+Apply for a school place - step 05: Get onto waiting list,"A. Automatically on a waiting list for schools higher in the list than offered school >  Check waiting list status (online - year 7/phone) > get offer (letter) > Decide on offer (email)
 
-B. Apply to be on a waiting list for a school lower than offered school (email) > Wait > Check waiting list status (online?) > Get offer (email/online portal) > Decide on offer (online/email)","Starting/attending school, Moving somewhere"
-(NT) Apply for a school place - step 09: Cancel Appeal ,Cancel appeal (email),
-Request a refund for unused school transport service,Return all travel passes to service (post ticket back) > Refund given,Starting/attending school
-Cancel or rearrange a booking for interview (ACL),Call ,Accessing further education
+B. Apply to be on a waiting list for a school lower than offered school (email) > Wait > Check waiting list status (online) > Get offer (email/online portal) > Decide on offer (online/email)","Starting/attending school, Moving somewhere",
+(NT) Apply for a school place - step 09: Cancel Appeal ,Cancel appeal (email),,
+Request a refund for unused school transport service,Return all travel passes to service (post ticket back) > Refund given,Starting/attending school,
+Cancel or rearrange a booking for interview (ACL),Call ,Accessing further education,
 Make a request for information,"A. Fill in form (online) 
-B. Email",
+B. Email",,
