@@ -14,13 +14,13 @@ require 'csv'
 patterns = [
   {
     name: "Check something",
-    description: "<p>This pattern enables a person to look up a piece of information and understand if applies to them or their circumstances. When an eligibility check can be done independently, it should be considered part of this pattern.</p>
-                  <p><strong>Tip:</strong> Is the user looking for specific  information (the status of something, the closest location or eligibility)?</p>"
+    description: "<p>This pattern enables a person who needs to look up information and understand if it applies to them or helps them find something.</p>
+                  <p><strong>Tip:</strong> Is the user looking for specific information (the status of something, the closest location or their eligibility to a service)?</p>"
   },
   {
     name: "Register for something",
-    description: "<p>This pattern enables the user to complete a process (like booking something). By registering, users will create an account with personal and sensitive data that they can return to. </p>
-                  <p><strong>Tip:</strong> Is the user being asked to supply personal details to a type of account?</p>"
+    description: "<p>This pattern enables the user to complete a process (like booking something). By registering, users will create an account with personal and sensitive data that they can return to.</p>
+                  <p><strong>Tip:</strong> Is the user being asked to enter personal details creating a council account?</p>"
   },
   {
     name: "Tell something",
@@ -29,24 +29,23 @@ patterns = [
   },
   {
     name: "Request something",
-    description: "<p>This pattern enables the user to ask for something in order to get to some tangible outcomes. Typically there is no eligibility check, because the user is entitled to what s/he wants by default.</p>
-                  <p><strong>Tip:</strong> Is the user being asked to request something to complete a task?</p>"
+    description: "<p>This pattern enables the user to ask for something specific in order to get to some tangible outcomes (eg. a copy of a certificate, a pass or a record digitised).</p>
+                  <p><strong>Tip:</strong> Is the user completing a task by requesting something?</p>"
   },
   {
     name: "Apply for something",
-    description: "<p>This pattern enables the user to complete an application process.</p>
+    description: "<p>This pattern enables the user to complete an application process. In the majority of the cases, this pattern is linked with a ‘Check something’ pattern to assess the eligibility.</p>
                   <p><strong>Tip:</strong> Is the user being asked to submit a type of application to complete a task?</p>"
   },
   {
     name: "Book something",
-    description: "<p>This pattern enables the user to book things such as a room, an item or a person’s time.
-                  In the majority of the cases, a specific date and time need to be selected.</p>
+    description: "<p>This pattern enables the user to book things such as a room, an item or a person’s time. In the majority of the cases, a specific date and time need to be selected.</p>
                   <p><strong>Tip:</strong> Is the user being asked to book something in order to complete a task?</p>"
   },
   {
     name: "Pay for something",
     description: "<p>This pattern enables the user to complete a monetary transaction towards the council.</p>
-                  <p><strong>Tip:</strong> Is the user being asked to complete a monetary transaction?</p>"
+                  <p><strong>Tip:</strong> Is the user being asked to pay for something?</p>"
   }
 ]
 patterns.each do |pattern|
