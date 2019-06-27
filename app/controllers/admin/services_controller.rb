@@ -1,6 +1,6 @@
 class Admin::ServicesController < Admin::BaseController
   def index
-    @services = Service.where(status: 'awaiting_approval')
+    @services = Service.where(status: 'awaiting_approval').order(created_at: :desc)
   end
 
   def edit

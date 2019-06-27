@@ -20,6 +20,6 @@
       %td
         = service.suggester_organisation
       %td
-        = service.created_at
+        = service.created_at.to_formatted_s(:short)
       %td
         = link_to "Moderate service", edit_admin_service_path(service)
