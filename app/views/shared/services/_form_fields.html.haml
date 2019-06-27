@@ -3,21 +3,30 @@
 = f.input :steps, hint: "This is the number of separate steps to complete in order to access an end-to-end service. For example, if users are registering a birth, they will normally be asked to book an appointment and then pay for the service. If there are multiple options for a user, for example ‘register for a service’ or ‘sign-in’, we’ve listed out alternatives using A., B., C. etc.  If a service (typically a non-transactional one) happens over a period of time, we’ve added its specific steps as Step 01, Step 02, etc."
 
 .input.check_boxes.required.service_patterns.field_with_hint.convert_checkboxes
-  %div= f.label :pattern_ids, "Which patterns apply to this service?", required: true
-  %span.hint
-    These are the common interactions that we can spot once we have identified the steps of a service. Things like ‘Check something’ or ‘Register for something’. A service can involve more than one pattern.
-  = f.collection_check_boxes(:pattern_ids, Pattern.all, :id, :name) do |builder|
-    = builder.check_box
-    .blocker
-    %span{ class: "single_pattern #{builder.object.name.parameterize}" }
-      = builder.object.name
-  %span.errors
-    = f.error :pattern_ids
+  #pattern_checkboxes
+    %div= f.label :pattern_ids, "Which patterns apply to this service?", required: true
+    %span.hint
+      These are the common interactions that we can spot once we have identified the steps of a service. Things like ‘Check something’ or ‘Register for something’. A service can involve more than one pattern.
+    = f.collection_check_boxes(:pattern_ids, Pattern.all, :id, :name) do |builder|
+      = builder.check_box
+      .blocker
+      %span{ class: "single_pattern #{builder.object.name.parameterize}" }
+        = builder.object.name
+    %span.errors
+      = f.error :pattern_ids
+
+  #pattern_confirmation
+    - Pattern.all.each do |pattern|
+      .pattern_info.hidden{ class: "pattern_text_#{pattern.id}"}
+        .bold
+          You have chosen
+          =pattern.name
+        %p=pattern.description.html_safe
 
 .input.check_boxes.required.service_life_event_ids.field_with_hint.convert_checkboxes
   %div= f.label :life_event_ids, "Which life events apply to this service? (optional)", required: true
   %span.hint
-    This is a new way of considering a service in relation to life events of a user (and as such it’s a provisional list that builds on 
+    This is a new way of considering a service in relation to life events of a user (and as such it’s a provisional list that builds on
     = link_to "this LGA example", "https://standards.esd.org.uk/?uri=list%2FlifeEvents", target: '_blank'
     ). For example, ‘Registering a birth’ or ‘Planning a naming ceremony’ could be grouped together under the life event of ‘Having a baby’, while applying for employment could be under ‘Getting a Job’. A service can have more than one applicable life event.
   = f.collection_check_boxes(:life_event_ids, LifeEvent.all, :id, :name) do |builder|
@@ -48,9 +57,10 @@
   .description
     %legend Your details
     %p We’re asking for your name, your email address and the name of the organisation that you work for. This is so that our moderators can follow up with you if they have a question about the services you have suggested. It might be that we need a little more detail to complete the entry.
-  = f.input :suggester_name, label: 'Your name', placeholder: 'Your name'
-  = f.input :suggester_email, label: 'Your email', placeholder: 'Your email'
-  = f.input :suggester_organisation, label: 'Your organisation', placeholder: 'Your organisation'
+    %br
+    = f.input :suggester_name, label: 'Your name', placeholder: 'Your name'
+    = f.input :suggester_email, label: 'Your email', placeholder: 'Your email'
+    = f.input :suggester_organisation, label: 'Your organisation', placeholder: 'Your organisation'
 
 %p
   If you have any other comments, queries or suggestions about LocalGov Patterns, then you can email us at:
