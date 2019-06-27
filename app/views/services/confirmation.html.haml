@@ -1,13 +1,12 @@
-%p
-  %strong
-    Thankyou!
-%p
-  Thanks for taking the time to help us with this project. By sharing this information, you’re helping us understand the way services work across local government and discover ways to make them better.
-%p
-  Your suggestions will be looked at by a moderator and we’ll contact you at the email address you gave us if we have any questions.
-%p
-  If you’d like to be kept up to date with any developments on LocalGov Patterns, then please tick this box and we’ll send you any updates via email.
-%p
-  If you have any other comments, queries or suggestions about LocalGov Patterns then you can email us at:
-  %strong
-    = ENV['ADMIN_EMAIL']
+.container.white_bg
+  %h2 Thank you!
+  %p
+    Thanks for taking the time to help us with this project. By sharing this information, you’re helping us understand the way services work across local government and discover ways to make them better.
+  %p
+    Your suggestions will be looked at by a moderator and we’ll contact you at the email address you gave us if we have any questions.
+  %p
+    If you’d like to be kept up to date with any developments on LocalGov Patterns, then please tick this box and we’ll send you any updates via email.
+  %p
+    If you have any other comments, queries or suggestions about LocalGov Patterns then you can email us at:
+    %strong
+      =mail_to ENV['ADMIN_EMAIL']
