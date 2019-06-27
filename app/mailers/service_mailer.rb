@@ -5,11 +5,12 @@ class ServiceMailer < ActionMailer::Base
   def thankyou service
     recipient = service.suggester_email
     sender = ENV['ADMIN_EMAIL']
-    @name = service.name
+    @suggester_name = service.suggester_name
+    @service_name = service.name
     mail(
       to: recipient,
       from: sender,
-      subject: "Thanks for submitting the service: #{@name}"
+      subject: "Thanks for submitting the service: #{@service_name}"
     )
   end
 
