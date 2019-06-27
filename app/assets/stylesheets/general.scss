@@ -5,6 +5,13 @@ html {
   font-weight: 400;
 }
 
+.grey_box {
+  background-color: $light_grey;
+  padding: 25px;
+  border-radius: $border-radius;
+  box-shadow: 0 10px 20px rgba(213,197,206,0.07);
+}
+
 .white_bg {
   background: #fff;
   border-radius: $border-radius;
@@ -72,10 +79,40 @@ h2 {
 }
 
 
-
-
 .breadcrumbs {
   @include desktop {
     padding-top: 7px;
   }
 }
+
+
+
+
+body.home.index {
+  h1 {
+    font-size: 2.25em;
+    margin-bottom: 15px;
+  }
+  .large_p {
+    font-size: 1.25em;
+    line-height: 1.4;
+    max-width: 960px;
+  }
+  .accord-single {
+    margin-bottom: 0;
+  }
+  .accord-toggle {
+    font-weight: 600;
+    color: $brand;
+    margin-top: 15px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .accord-cont {
+    padding-top: 10px;
+  }
+}
+
+
+
