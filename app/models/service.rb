@@ -1,7 +1,8 @@
 class Service < ApplicationRecord
-  validates :name, :steps, :pattern_ids, :organisation_types, :transactional, presence: true
+  validates :name, :steps, :pattern_ids, :organisation_types, presence: true
   validates :suggester_name, :suggester_email, :suggester_organisation, presence: true, unless: :seed
   validates :suggester_email, format: { with: URI::MailTo::EMAIL_REGEXP }, unless: :seed
+  validates_inclusion_of :transactional, in: [true, false]
 
   serialize :organisation_types, Array
 

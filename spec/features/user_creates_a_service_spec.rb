@@ -34,7 +34,7 @@ RSpec.feature "Service creation", :type => :feature do
 
     click_button 'Add this service'
 
-    expect(page).to have_text('Thankyou!')
+    expect(page).to have_text('Thank you!')
 
     service = Service.last
     expect(service.name).to eq('Name of a new service')

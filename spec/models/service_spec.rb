@@ -51,6 +51,12 @@ RSpec.describe Service, type: :model do
     expect(Service.new(attrs)).to be_invalid
   end
 
+  it 'is valid with transactional false' do
+    attrs = FactoryBot.attributes_for(:service)
+    attrs[:transactional] = false
+    expect(Service.new(attrs)).to be_valid
+  end
+
   it 'is invalid with invalid email address' do
     attrs = FactoryBot.attributes_for(:service).except(:suggester_email)
     attrs[:suggester_email] = "asdfgfh"
