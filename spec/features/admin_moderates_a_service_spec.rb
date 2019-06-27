@@ -22,7 +22,7 @@ RSpec.feature "Service moderation", :type => :feature do
     expect(page).to have_text(service.name)
     expect(page).to have_text(service.suggester_organisation)
     expect(page).to have_text(service.suggester_name)
-    expect(page).to have_text(service.created_at)
+    expect(page).to have_text(service.created_at.to_formatted_s(:short))
 
     click_link 'Moderate service'
     expect(page).to have_text("Edit #{service.name}")
