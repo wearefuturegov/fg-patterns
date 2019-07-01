@@ -1,3 +1,8 @@
+.container.breadcrumbs
+  =link_to "Home", root_path
+  %span.arrow >
+  Services
+
 .container.white_bg
   #pattern_links{ class: "active_#{@selected_pattern.try(:slug)}" }
     = link_to 'All patterns', services_path, class: "single_pattern fg_brand"
