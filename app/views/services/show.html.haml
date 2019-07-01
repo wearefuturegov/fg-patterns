@@ -37,6 +37,11 @@
     - else
       No, this is a non transactional service
 
+  %br
+  %p
+    %span.hint Let us know if there is anything missing or that should be changed on this service.
+    %br
+    =mail_to ENV['ADMIN_EMAIL'], "Amend this service", subject: "Ammend service: patterns.wearefuturegov.com/services/#{@service.id}"
 
 .container.full_container
   = link_to "Add a new service", new_service_path, class: 'button right'
