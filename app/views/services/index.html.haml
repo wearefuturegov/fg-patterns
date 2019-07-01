@@ -30,9 +30,9 @@
           Alternatively, if you want to amend or comment on existing services, you can email us directly at
           %strong
             =mail_to ENV['ADMIN_EMAIL']
+        %br
+        = link_to "Add a new service", new_service_path, class: 'button'
 
-.container.full_container
-  = link_to "Add a new service", new_service_path, class: 'button right'
 
 .pattern_table.table.container.full_container
   %h2="#{@services.count} total services"
