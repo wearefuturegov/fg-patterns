@@ -11,7 +11,7 @@ class Service < ApplicationRecord
 
   before_create :set_status, unless: :seed
 
-  scope :published, -> { where(status: 'published').order('LOWER(name)').includes(:patterns, :life_events) }
+  scope :published, -> { where(status: 'published').order(arel_table['name'].lower.asc).includes(:patterns, :life_events) }
 
   attr_accessor :seed # Is set to true during seeding process so that suggester validations can be skipped.
 
