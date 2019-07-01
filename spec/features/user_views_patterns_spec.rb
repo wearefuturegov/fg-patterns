@@ -12,7 +12,7 @@ RSpec.feature "Patterns viewing", :type => :feature do
 
   scenario "User views patterns" do
     pattern = Pattern.first
-    visit patterns_path(selected: pattern)
+    visit services_path(selected: pattern)
     service = pattern.services.first
     service_name_div = find('.table__data', text: service.name)
     service_row_div = service_name_div.first(:xpath,".//..") # parent element

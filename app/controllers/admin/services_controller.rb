@@ -16,7 +16,7 @@ class Admin::ServicesController < Admin::BaseController
         ServiceMailer.service_approved(@service).deliver
       end
       flash[:notice] = "Service #{@service.name} was published"
-      redirect_to patterns_path
+      redirect_to services_path
     else
       render 'edit'
     end

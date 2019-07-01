@@ -3,6 +3,17 @@ class ServicesController < ApplicationController
   def new
     @service = Service.new
   end
+
+  def index
+    @patterns = Pattern.all
+    if params[:selected]
+      @selected_pattern = Pattern.find(params[:selected])
+      @services = @selected_pattern.services.published
+    else
+      @services = Service.published
+    end
+  end
+
   def create
     @service = Service.new(service_params)
     if @service.save
@@ -16,9 +27,6 @@ class ServicesController < ApplicationController
 
   def show
     @service = Service.find(params[:id])
-  end
-
-  def index
   end
 
   private

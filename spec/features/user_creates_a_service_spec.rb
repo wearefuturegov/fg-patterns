@@ -46,7 +46,7 @@ RSpec.feature "Service creation", :type => :feature do
     expect(service.patterns.first).to eq(Pattern.first)
     expect(service.transactional).to eq(true)
 
-    visit patterns_path(selected: service.patterns.first.id)
+    visit services_path(selected: service.patterns.first.id)
     expect(page).to_not have_text(service.name)
 
     deliveries = ActionMailer::Base.deliveries

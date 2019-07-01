@@ -1,7 +1,7 @@
 .container.breadcrumbs
   =link_to "Home", root_path
   %span.arrow >
-  =link_to "Services", patterns_path
+  =link_to "Services", services_path
   %span.arrow >
   =@service.name
   service
@@ -15,7 +15,7 @@
   %p.bold Patterns
   #pattern_links
     - @service.patterns.each do |pattern|
-      = link_to pattern.name, patterns_path(selected: pattern.id), class: "single_pattern #{pattern.name.parameterize}", title: "View services under the #{pattern.name} pattern"
+      = link_to pattern.name, services_path(selected: pattern.id), class: "single_pattern #{pattern.name.parameterize}", title: "View services under the #{pattern.name} pattern"
 
   - if @service.life_events.any?
     %p.bold Life events

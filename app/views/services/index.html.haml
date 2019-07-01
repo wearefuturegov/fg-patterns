@@ -1,8 +1,8 @@
 .container.white_bg
   #pattern_links{ class: "active_#{params[:selected]}" }
-    = link_to 'All patterns', patterns_path, class: "single_pattern fg_brand"
+    = link_to 'All patterns', services_path, class: "single_pattern fg_brand"
     - @patterns.each do |pattern|
-      = link_to pattern.name.chomp(" something").chomp(" for"), patterns_path(selected: pattern.id), class: "single_pattern #{pattern.name.parameterize}", title: "View services under the #{pattern.name} pattern"
+      = link_to pattern.name.chomp(" something").chomp(" for"), services_path(selected: pattern.id), class: "single_pattern #{pattern.name.parameterize}", title: "View services under the #{pattern.name} pattern"
   .description
     - if @selected_pattern
       .description
