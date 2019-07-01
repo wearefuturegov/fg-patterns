@@ -3,6 +3,9 @@ html {
   font-family: proxima-nova, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
+  @include desktop {
+    line-height: 1.5;
+  }
 }
 
 .grey_box {
@@ -55,12 +58,14 @@ body.index.services, body.services.new, body.services.create, body.services.show
 
 a {
   color: $brand;
-  text-decoration: none;
+  text-decoration: underline;
   &:hover {
     color: darken($brand, 10%);
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
+
+
 
 h2 {
   margin: 0 0 0.5em;
@@ -83,6 +88,13 @@ h2 {
 
 
 .breadcrumbs {
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
   @include desktop {
     padding-top: 7px;
   }
