@@ -19,8 +19,11 @@
 
   - if @service.life_events.any?
     %p.bold Life events
+    %p.hint
+      Life events are taken from a provisional list that
+      = link_to "builds on this LGA example.", "https://standards.esd.org.uk/?uri=list%2FlifeEvents", target: '_blank'
     - @service.life_events.each do |life_event|
-      .single_pattern.not_pattern
+      .single_pattern.not_pattern.large_pattern
         = life_event.name
 
   %p.bold Organisation type

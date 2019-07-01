@@ -10,6 +10,11 @@
   &.not_pattern {
     background-color: rgba($dark_gray, 0.2);
   }
+  &.large_pattern {
+    margin: 4px 2px;
+    padding: 5px 20px;
+    font-weight: 600;
+  }
 }
 
 .description {

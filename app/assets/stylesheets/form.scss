@@ -11,11 +11,12 @@
     margin-bottom: 15px;
   }
 }
-.simple_form span.error, .simple_form span.hint {
+.simple_form span.error, .simple_form span.hint, p.hint {
   line-height: 1.4;
   margin-top: 0;
   font-size: 80%;
   max-width: 623px;
+  font-style: italic;
 }
 
 .service_transactional select {
