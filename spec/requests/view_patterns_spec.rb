@@ -9,12 +9,12 @@ RSpec.describe "View Patterns", type: :request do
 
   it "displays the description for a pattern" do
     pattern = Pattern.first
-    get services_path(selected: pattern)
+    get pattern_path(pattern.slug)
     expect(response.body).to include(pattern.description)
   end
 
   it "loads the relevant services for a pattern" do
-    get services_path(selected: Pattern.first)
+    get pattern_path(Pattern.first.slug)
     Pattern.first.services.each do |service|
       expect(response.body).to include(service.name)
     end

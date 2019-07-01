@@ -15,7 +15,7 @@
   %p.bold Patterns
   #pattern_links
     - @service.patterns.each do |pattern|
-      = link_to pattern.name, services_path(selected: pattern.id), class: "single_pattern #{pattern.name.parameterize}", title: "View services under the #{pattern.name} pattern"
+      = link_to pattern.name, pattern_path(pattern.slug), class: "single_pattern #{pattern.name.parameterize}", title: "View services under the #{pattern.name} pattern"
 
   - if @service.life_events.any?
     %p.bold Life events
