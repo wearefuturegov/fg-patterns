@@ -2,6 +2,12 @@
   %h1 Service patterns for local government
   %p.large_p Welcome to LocalGov Patterns - a nationwide project to build a shared library of service patterns for local government.
 
+  %p We've been working with Essex County Council to map their services to identify and understand common service patterns. It became clear that there is a massive opportunity to open up this work to create opportunities for collaboration and shared knowledge.
+
+  %p
+    In short, to create
+    %span.bold a shared library of service patterns for local government.
+
   = link_to "Go to LocalGov Patterns library", services_path, class: 'button'
 
 
@@ -12,51 +18,28 @@
 
     %p For a user, a service is simple. It’s something that helps them to do something — like plan an event, get help with transportation or find a place to live.
 
-    .accordion
-      .accord-single
-        .accord-toggle
-          Read more about services
-          =fa_icon "chevron-down"
-        .accord-cont
-          %p
-            %i
-              “It’s an activity that needs to be done. A verb that comes naturally… that cuts across transactions, call centre menus and around advisors towards its goal.”
-            Louise Downe -
-            = link_to "Good services are verbs", "https://designnotes.blog.gov.uk/2015/06/22/good-services-are-verbs-2/", target: '_blank'
-          %p
-            Millions of people use local services every day. But these services are often designed and implemented differently. This means that the user experience can be hugely inconsistent across local government.
-          %p
-            We believe that
-            =link_to "understanding your services", "https://blog.wearefuturegov.com/understanding-your-services-3344d4bb1f75", target: "_blank"
-            is the first step towards improving or transforming them. We think that a design-led approach is the way to build this understanding.
-          %p
-            We’ve been working with Essex County Council to map their services to identify and understand common service patterns. It became clear that there is a massive opportunity to open up this work to create opportunities for collaboration and shared knowledge.
-          %p
-            %strong
-              In short, to create a shared library of service patterns for local government.
-
-
+    %p
+      %i
+        “It’s an activity that needs to be done. A verb that comes naturally… that cuts across transactions, call centre menus and around advisors towards its goal.”
+      Louise Downe -
+      = link_to "Good services are verbs", "https://designnotes.blog.gov.uk/2015/06/22/good-services-are-verbs-2/", target: '_blank'
+    %p
+      Millions of people use local services every day. But these services are often designed and implemented differently. This means that the user experience can be hugely inconsistent across local government.
 
 .container
   .description.grey_box
     %h2 What is a service pattern and why does it matter?
     %p
       No two local authorities are the same, or do things in the same way.
-    .accordion
-      .accord-single
-        .accord-toggle
-          Read more about why service patterns matter
-          =fa_icon "chevron-down"
-        .accord-cont
-          %p
-            And although there are some overwhelming similarities in the types of services they offer, councils often work in different ways to meet users’ needs.
-          %p
-            By breaking down services into their component parts, we can start to identify common interactions and tasks across stages of services - things like reporting a problem, applying for something or checking eligibility.
-          %p
-            %strong
-              These are service patterns.
-          %p
-            Service patterns allow us to have practical guidelines for services. They help us identify how they can be designed consistently to meet shared user needs. And they also help us consider broader topics like ways of working, uses of underlying technologies and how services are supported by capabilities and processes inside organisations.
+    %p
+      And although there are some overwhelming similarities in the types of services they offer, councils often work in different ways to meet users’ needs.
+    %p
+      By breaking down services into their component parts, we can start to identify common interactions and tasks across stages of services - things like reporting a problem, applying for something or checking eligibility.
+    %p
+      %strong
+        These are service patterns.
+    %p
+      Service patterns allow us to have practical guidelines for services. They help us identify how they can be designed consistently to meet shared user needs. And they also help us consider broader topics like ways of working, uses of underlying technologies and how services are supported by capabilities and processes inside organisations.
 
 
 
@@ -66,20 +49,14 @@
     %h2 Why a service pattern library?
     %p
       Working with Essex County Council, we have identified around 150 services for residents. Services like ‘reporting a birth’ or ‘applying for a school place’ to ‘reporting a flood’. This has helped us get an understanding of what things look like right now within one county council.
-    .accordion
-      .accord-single
-        .accord-toggle
-          Read more about why we are building a service pattern library
-          =fa_icon "chevron-down"
-        .accord-cont
-          %p
-            We want to find many more examples of services and how they are implemented from other local authorities. From there we can start to identify some commonalities and best practices and begin to prototype a service pattern library.
-          %p
-            A library can support local government teams to create more consistent and familiar experiences. To make things quicker, easier and more accessible for users, as well as more efficient and cost-effective for organisations.
-          %p
-            A library will include: when to use a pattern (and when not), how it works, any interdependencies and underlying technology and research.
-          %p
-            By sharing knowledge and best practice, we intend to support how local government scales service improvement and transformation in a much smarter way.
+    %p
+      We want to find many more examples of services and how they are implemented from other local authorities. From there we can start to identify some commonalities and best practices and begin to prototype a service pattern library.
+    %p
+      A library can support local government teams to create more consistent and familiar experiences. To make things quicker, easier and more accessible for users, as well as more efficient and cost-effective for organisations.
+    %p
+      A library will include: when to use a pattern (and when not), how it works, any interdependencies and underlying technology and research.
+    %p
+      By sharing knowledge and best practice, we intend to support how local government scales service improvement and transformation in a much smarter way.
 
 
 
@@ -92,16 +69,15 @@
       %strong
         Right now, we need input from as many local authorities as we can to build up our initial knowledge base.
       The more information we can collect, the better our understanding of service patterns will be.
-    %p
+    %p.mb
       %strong
         We need you to add any missing services.
 
     = link_to "Add a new service", new_service_path, class: 'button'
-    %br
-    %br
-    %p
-      %strong
-        Read about our work
+
+.container
+  .description.grey_box
+    %h2 Read more about our service design work
     %ul.default
       %li= link_to "What do we think about service patterns",  "https://blog.wearefuturegov.com/what-do-we-think-about-service-patterns-for-local-government-49c75c8a2203", target: '_blank'
       %li= link_to "Understanding your services", "https://blog.wearefuturegov.com/understanding-your-services-3344d4bb1f75", target: '_blank'

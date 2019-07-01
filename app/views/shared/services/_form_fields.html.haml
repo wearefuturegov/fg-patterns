@@ -53,16 +53,17 @@
 = f.input :transactional, :label => "Is this service transactional?", as: :select, collection: [['Yes', true], ['No', false]], include_blank: true, hint: "A transactional service is one that users complete end to end that doesn’t have a high level of complexity and/or need face-to-face interaction. For example, ordering a certificate or making a payment. A non-transactional service is made up of multiple interactions between the user and the council over time, for example social care services. That said, non-transactional services can include transactional services, like the ones mentioned above."
 
 %br
-%fieldset
+%fieldset#your_details
   .description
     %legend Your details
-    %p We’re asking for your name, your email address and the name of the organisation that you work for. This is so that our moderators can follow up with you if they have a question about the services you have suggested. It might be that we need a little more detail to complete the entry.
-    %br
+    %p.mb We’re asking for your name, your email address and the name of the organisation that you work for. This is so that our moderators can follow up with you if they have a question about the services you have suggested. It might be that we need a little more detail to complete the entry.
+
     = f.input :suggester_name, label: 'Your name', placeholder: 'Your name'
     = f.input :suggester_email, label: 'Your email', placeholder: 'Your email'
     = f.input :suggester_organisation, label: 'Your organisation', placeholder: 'Your organisation'
 
-%p
-  If you have any other comments, queries or suggestions about LocalGov Patterns, then you can email us at:
-  %strong
-    =mail_to ENV['ADMIN_EMAIL']
+.description
+  %p.mb
+    If you have any other comments, queries or suggestions about LocalGov Patterns, then you can email us at:
+    %strong
+      =mail_to ENV['ADMIN_EMAIL']

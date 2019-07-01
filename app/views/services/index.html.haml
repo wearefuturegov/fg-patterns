@@ -31,11 +31,11 @@
 
         %p You can add your own services to this library and tell us what common patterns they use. There’s also an opportunity to provide extra details like what steps they include, what type of organisation they sit in or what type of life event they are part of for the user.
 
-        %p
+        %p.mb
           Alternatively, if you want to amend or comment on existing services, you can email us directly at
           %strong
             =mail_to ENV['ADMIN_EMAIL']
-        %br
+
         = link_to "Add a new service", new_service_path, class: 'button'
 
 

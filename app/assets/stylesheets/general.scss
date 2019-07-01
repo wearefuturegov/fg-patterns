@@ -34,6 +34,9 @@ html {
     }
   }
 }
+.mb {
+  margin-bottom: 10px !important;
+}
 
 body.index.services, body.services.new, body.services.create, body.services.show, body.patterns.show {
   background-color: $light_grey;
