@@ -7,7 +7,7 @@
   #pattern_links{ class: "active_#{@selected_pattern.try(:slug)}" }
     = link_to 'All patterns', services_path, class: "single_pattern fg_brand"
     - @patterns.each do |pattern|
-      = link_to pattern.name.chomp(" something").chomp(" for"), pattern_path(pattern.slug), class: "single_pattern #{pattern.name.parameterize}", title: "View services under the #{pattern.name} pattern"
+      = link_to pattern.name.chomp(" something").chomp(" for"), filter_by_pattern_path(pattern.slug), class: "single_pattern #{pattern.name.parameterize}", title: "View services under the #{pattern.name} pattern"
   .description
     - if @selected_pattern
       .description
@@ -37,7 +37,7 @@
 
 .pattern_table.table.container.full_container
   - if @selected_pattern
-    = form_tag(pattern_path(@selected_pattern.slug), method: :get) do
+    = form_tag(filter_by_pattern_path(@selected_pattern.slug), method: :get) do
       = label_tag "Filter by life event"
       = select_tag "life_event_select", options_from_collection_for_select(@life_events, "id", "name", @selected_life_event.try(:id)), onchange: 'this.form.submit();', include_blank: "--Select a life event--"
   - else

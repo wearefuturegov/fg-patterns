@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   resources :services, only: [:new, :index, :create, :show]
 
-  #get '/check', to: 'services#show', id: 1
-
-  resources :patterns, only: :show, param: :slug, path: '/'
+  resources :patterns, only: [], param: :slug, path: '/', controller: 'services' do
+    member do
+      get :filter_by, to: 'services#index', path: '/'
+    end
+  end
 
   namespace :admin do
     root to: "services#index"
