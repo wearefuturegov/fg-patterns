@@ -66,7 +66,7 @@
 #pattern_links {
   .single_pattern {
     margin: 4px 2px;
-    padding: 5px 20px;
+    padding: 5px 19px;
     font-weight: 600;
 
     &:hover {
@@ -175,7 +175,20 @@
 .pattern_table {
   padding-bottom: 0;
   padding-top: 0;
-  margin-top: 50px;
+  margin-top: 25px;
+  #life_event_filter {
+    margin-bottom: 25px;
+    select {
+      max-width: 300px;
+    }
+  }
+  form {
+    display: inline-block;
+  }
+  #clear_button {
+    display: inline-block;
+    margin-left: 5px;
+  }
   .single_pattern {
     font-size: 0.75em;
   }

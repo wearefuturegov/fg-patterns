@@ -19,9 +19,6 @@
 
   - if @service.life_events.any?
     %p.bold Life events
-    %p.hint
-      Life events are taken from a provisional list that
-      = link_to "builds on this LGA example.", "https://standards.esd.org.uk/?uri=list%2FlifeEvents", target: '_blank'
     - @service.life_events.each do |life_event|
       .single_pattern.not_pattern.large_pattern
         = life_event.name
@@ -41,7 +38,7 @@
   %p
     %span.hint Let us know if there is anything missing or that should be changed on this service.
     %br
-    =mail_to ENV['ADMIN_EMAIL'], "Amend this service", subject: "Ammend service: patterns.wearefuturegov.com/services/#{@service.id}"
+    =mail_to ENV['ADMIN_EMAIL'], "Suggest an amendment to this service", subject: "Ammend service: patterns.wearefuturegov.com/services/#{@service.id}"
 
 .container.full_container
   = link_to "Add a new service", new_service_path, class: 'button right'
