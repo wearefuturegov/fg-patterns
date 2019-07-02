@@ -32,10 +32,18 @@
           %strong
             =mail_to ENV['ADMIN_EMAIL']
 
-        = link_to "Add a new service", new_service_path, class: 'button'
+    = link_to "Add a new service", new_service_path, class: 'button'
 
 
 .pattern_table.table.container.full_container
+  - if @selected_pattern
+    = form_tag(pattern_path(@selected_pattern.slug), method: :get) do
+      = label_tag "Filter by life event"
+      = select_tag "life_event_select", options_from_collection_for_select(@life_events, "id", "name", @selected_life_event.try(:id)), onchange: 'this.form.submit();', include_blank: "--Select a life event--"
+  - else
+    = form_tag(services_path, method: :get) do
+      = label_tag "Filter by life event"
+      = select_tag "life_event_select", options_from_collection_for_select(@life_events, "id", "name", @selected_life_event.try(:id)), onchange: 'this.form.submit();', include_blank: "--Select a life event--"
   %h2="#{@services.count} total services"
   .row.head_row
     .table__head.third Service name
