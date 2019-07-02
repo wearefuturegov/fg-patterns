@@ -180,6 +180,8 @@
     margin-bottom: 25px;
     select {
       max-width: 300px;
+      background: #fff;
+      height: 35px;
     }
   }
   form {
@@ -187,7 +189,7 @@
   }
   #clear_button {
     display: inline-block;
-    margin-left: 5px;
+    margin-left: 10px;
   }
   .single_pattern {
     font-size: 0.75em;
