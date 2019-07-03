@@ -28,7 +28,7 @@
   %span.hint
     This is a new way of considering a service in relation to life events of a user (and as such it’s a provisional list that builds on
     = link_to "this LGA example", "https://standards.esd.org.uk/?uri=list%2FlifeEvents", target: '_blank'
-    ). For example, ‘Registering a birth’ or ‘Planning a naming ceremony’ could be grouped together under the life event of ‘Having a baby’, while applying for employment could be under ‘Getting a Job’. A service can have more than one applicable life event.
+    ). For example, ‘Registering a birth’ or ‘Planning a naming ceremony’ could be grouped together under the life event of ‘Having a baby’, while applying for employment could be under ‘Getting a Job’. Select all that apply.
   = f.collection_check_boxes(:life_event_ids, LifeEvent.all, :id, :name) do |builder|
     = builder.check_box
     .blocker
