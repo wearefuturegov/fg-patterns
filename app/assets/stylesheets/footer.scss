@@ -1,22 +1,38 @@
-
 footer {
-  background: $brand;
+  background: $dark_gray;
   width: 100%;
   margin-top: 25px;
+  text-align: center;
+  color: #fff;
 
-  .fg_logo {
+  a {
+    color: #fff;
+
+    &:hover {
+      opacity: 0.8;
+      color: #fff;
+    }
+  }
+
+  .fg_logo, .essex_logo {
     display: inline-block;
+    margin: 0 10px;
     width: 175px;
     height: 25px;
     background: image-url("fg_logo_white.svg") center center no-repeat;
     background-size: 100%;
-    margin-right: 25px;
+    vertical-align: middle;
   }
   .essex_logo {
-    display: inline-block;
     width: 169px;
     height: 25px;
     background: image-url("essex_logo_white.png") center center no-repeat;
     background-size: 100%;
+  }
+  #copywrite {
+    max-width: 450px;
+    margin: 0 auto;
+    font-size: 80%;
+    line-height: 1.25;
   }
 }
