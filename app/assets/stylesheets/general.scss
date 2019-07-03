@@ -117,54 +117,6 @@ h2 {
 }
 
 
-
-
-body.home.index {
-  h1 {
-    font-size: 3em;
-    margin-bottom: 15px;
-  }
-  .large_p {
-    font-size: 1.25em;
-    line-height: 1.4;
-    max-width: 960px;
-  }
-  .accord-single {
-    margin-bottom: 0;
-  }
-  .accord-toggle {
-    font-weight: 600;
-    color: $brand;
-    margin-top: 15px;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  .accord-cont {
-    padding-top: 10px;
-  }
-}
-
-.centre_text {
-  text-align: center;
-}
-
-#partner_box {
-  margin-bottom: 15px;
-
-  @include desktop {
-    max-width: 275px;
-  }
-  .essex_logo {
-    width: 150px;
-    height: 75px;
-    background: image-url("essex_logo.png") center center no-repeat;
-    background-size: 100%;
-    margin: 0 auto;
-    margin-top: 10px;
-  }
-}
-
 .pink {
   color: $brand;
 }
@@ -176,39 +128,4 @@ body.home.index {
   font-style: italic;
   text-transform: uppercase;
 }
-
-.blog {
-  margin-bottom: 25px;
-  .image {
-    width: 100%;
-    height: 165px;
-    margin-bottom: 10px;
-    @include mobile {
-      height: 190px;
-    }
-    @include tablet {
-      height: 225px;
-    }
-    @include desktop {
-      height: 115px;
-    }
-    @include hd-desktop {
-      height: 165px;
-    }
-
-    &#blog1 {
-      background: image-url("blog1.jpg") center center no-repeat;
-      background-size: 100%;
-    }
-    &#blog2 {
-      background: image-url("blog2.png") center center no-repeat;
-      background-size: 100%;
-    }
-    &#blog3 {
-      background: image-url("blog3.jpg") center center no-repeat;
-      background-size: 100%;
-    }
-  }
-}
-
 
