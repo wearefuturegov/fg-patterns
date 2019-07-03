@@ -14,17 +14,16 @@ RSpec.feature "Service moderation", :type => :feature do
     service = Service.create(FactoryBot.attributes_for(:service))
 
     visit admin_services_path
-    expect(page).to_not have_text('Sevices awaiting approval')
+    expect(page).to_not have_text('1 sevice awaiting approval')
 
     page.driver.browser.authorize(ENV['HTTP_USERNAME'], ENV['HTTP_PASSWORD'])
     visit admin_services_path
-    expect(page).to have_text('Services awaiting approval')
+    expect(page).to have_text('1 service awaiting approval')
     expect(page).to have_text(service.name)
     expect(page).to have_text(service.suggester_organisation)
     expect(page).to have_text(service.suggester_name)
     expect(page).to have_text(service.created_at.to_formatted_s(:short))
-
-    click_link 'Moderate service'
+    first('table').click_link 'Moderate service'
     expect(page).to have_text("Edit #{service.name}")
     fill_in 'Name', with: 'Name of new service edited'
 
