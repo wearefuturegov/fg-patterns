@@ -63,7 +63,7 @@
   %div= f.label :organisation_types, "Which organisation types is this service found in?", required: true
   %span.hint
     %p
-      We’d like to get a sense of where different services sit in different types of organisations. For example, you can tell us whether a service is in a county, borough or district council. 
+      We’d like to get a sense of where different services sit in different types of organisations. For example, you can tell us whether a service is in a county, borough or district council.
     %p
       Services can sit in more than one organisation.
   = f.collection_check_boxes(:organisation_types, Service.organisation_types, :first, :last, include_hidden: false) do |builder|
@@ -75,19 +75,20 @@
     = f.error :organisation_types
 
 
-= f.input :transactional, :label => "Is this service transactional?", as: :select, collection: [['Yes', true], ['No', false]], include_blank: true, hint: "A transactional service is a direct interaction between the council and a service user. It should be low complexity, and typically won’t require any additional or face-to-face interventions. A non-transactional service is typically made up of multiple and different types of interactions over a longer period of time. That said, most non-transactional services will include transactional elements, as described above."
+= f.input :transactional, :label => "Is this service transactional?", as: :select, collection: [['Yes', true], ['No', false]], include_blank: true, hint: "A transactional service is a direct interaction between the council and a service user. It should be low complexity, and typically won’t require any additional or face-to-face interventions. A non-transactional service is typically made up of multiple and different types of interactions over a longer period of time."
 
 %br
 %fieldset#your_details
   .restrict_full_width
     %legend Your details
-    %p.mb We’re asking for your name, your email address and the name of the organisation that you work for. This is so that our moderators can follow up with you if they have a question about the services you have suggested. It might be that we need a little more detail to complete the entry.
+    %p.hint.mb We’re asking for your name, your email address and the name of the organisation that you work for. This is so that our moderators can follow up with you if they have a question about the services you have suggested. It might be that we need a little more detail to complete the entry.
 
     = f.input :suggester_name, label: 'Your name', placeholder: 'Your name'
     = f.input :suggester_email, label: 'Your email', placeholder: 'Your email'
     = f.input :suggester_organisation, label: 'Your organisation', placeholder: 'Your organisation'
 
 .restrict_full_width
+  %br
   %p.mb
     If you have any other comments, queries or suggestions about LocalGov Patterns, then you can email us at:
     %strong

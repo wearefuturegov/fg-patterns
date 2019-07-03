@@ -7,18 +7,19 @@
       %strong
         LocalGov Patterns
       \- a nationwide project to build a shared library of service patterns for local government.
-  / .third.grey_box
-  /   In partnership with
-  /   ESSEX
+  #partner_box.third.grey_box.centre_text
+    In partnership with
+    .essex_logo
   .two_thirds
+    = link_to "Go to LocalGov Patterns library", services_path, class: 'button mb'
+
     .restrict_full_width
       %p We've been working with Essex County Council to map their services to identify and understand common service patterns. It became clear that there is a massive opportunity to open up this work to create opportunities for collaboration and shared knowledge.
 
-      %p.mb
+      %p
         In short, to create
         %span.bold a shared library of service patterns for local government.
 
-      = link_to "Go to LocalGov Patterns library", services_path, class: 'button'
 
 
 
@@ -86,10 +87,13 @@
 .container
   .restrict_full_width.full_width
     %h2 Read more about our service design work
-    .third
+    .third.blog
+      .image#blog1
       = link_to "What do we think about service patterns",  "https://blog.wearefuturegov.com/what-do-we-think-about-service-patterns-for-local-government-49c75c8a2203", target: '_blank'
-    .third
+    .third.blog
+      .image#blog2
       = link_to "Understanding your services", "https://blog.wearefuturegov.com/understanding-your-services-3344d4bb1f75", target: '_blank'
-    .third
+    .third.blog
+      .image#blog3
       = link_to "Sharing and prioritising our common service patterns", "https://servicedesign.blog.essex.gov.uk/2019/05/08/sharing-and-prioritising-our-common-service-patterns/", target: '_blank'
 
