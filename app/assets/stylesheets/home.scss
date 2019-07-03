@@ -53,6 +53,10 @@ body.home.index {
     display: block;
     color: $black;
     text-decoration: none;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
   h4 {
     font-size: 100%;
