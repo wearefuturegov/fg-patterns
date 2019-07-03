@@ -1,19 +1,25 @@
 .container
-  %h1 Service patterns for local government
-  %p.large_p Welcome to LocalGov Patterns - a nationwide project to build a shared library of service patterns for local government.
-  .description
-    %p We've been working with Essex County Council to map their services to identify and understand common service patterns. It became clear that there is a massive opportunity to open up this work to create opportunities for collaboration and shared knowledge.
+  .restrict_full_width
+  .two_thirds
+    %h1 Service patterns for local government
+    %p.large_p Welcome to LocalGov Patterns - a nationwide project to build a shared library of service patterns for local government.
+  .third.grey_box
+    In partnership with
+    ESSEX
+  .two_thirds
+    .restrict_full_width
+      %p We've been working with Essex County Council to map their services to identify and understand common service patterns. It became clear that there is a massive opportunity to open up this work to create opportunities for collaboration and shared knowledge.
 
-    %p
-      In short, to create
-      %span.bold a shared library of service patterns for local government.
+      %p.mb
+        In short, to create
+        %span.bold a shared library of service patterns for local government.
 
-    = link_to "Go to LocalGov Patterns library", services_path, class: 'button'
+      = link_to "Go to LocalGov Patterns library", services_path, class: 'button'
 
 
 
 .container
-  .description.grey_box
+  .restrict_full_width.grey_box.full_width
     %h2 What is a service?
 
     %p For a user, a service is simple. It’s something that helps them to do something — like plan an event, get help with transportation or find a place to live.
@@ -27,7 +33,7 @@
       Millions of people use local services every day. But these services are often designed and implemented differently. This means that the user experience can be hugely inconsistent across local government.
 
 .container
-  .description.grey_box
+  .restrict_full_width.grey_box.full_width
     %h2 What is a service pattern and why does it matter?
     %p
       Even though there are overwhelming similarities in the types of services they offer, councils often work in different ways to meet users needs.
@@ -43,7 +49,7 @@
 
 
 .container
-  .description.grey_box
+  .restrict_full_width.grey_box.full_width
     %h2 Why a service pattern library?
     %p
       Working with Essex County Council, we have identified around 150 services for residents. Services like ‘registering a birth’ or ‘applying for a school place’ to ‘reporting a flood’. This has helped us get an understanding of what things look like right now within one county council.
@@ -60,7 +66,7 @@
 
 
 .container
-  .description.grey_box
+  .restrict_full_width.pink_box.full_width
     %h2 Share your knowledge
     %p
       This is project is in its early stages.
@@ -74,10 +80,12 @@
     = link_to "Add a new service", new_service_path, class: 'button'
 
 .container
-  .description.grey_box
+  .restrict_full_width.full_width
     %h2 Read more about our service design work
-    %ul.default
-      %li= link_to "What do we think about service patterns",  "https://blog.wearefuturegov.com/what-do-we-think-about-service-patterns-for-local-government-49c75c8a2203", target: '_blank'
-      %li= link_to "Understanding your services", "https://blog.wearefuturegov.com/understanding-your-services-3344d4bb1f75", target: '_blank'
-      %li= link_to "Sharing and prioritising our common service patterns", "https://servicedesign.blog.essex.gov.uk/2019/05/08/sharing-and-prioritising-our-common-service-patterns/", target: '_blank'
+    .third
+      = link_to "What do we think about service patterns",  "https://blog.wearefuturegov.com/what-do-we-think-about-service-patterns-for-local-government-49c75c8a2203", target: '_blank'
+    .third
+      = link_to "Understanding your services", "https://blog.wearefuturegov.com/understanding-your-services-3344d4bb1f75", target: '_blank'
+    .third
+      = link_to "Sharing and prioritising our common service patterns", "https://servicedesign.blog.essex.gov.uk/2019/05/08/sharing-and-prioritising-our-common-service-patterns/", target: '_blank'
 

@@ -8,19 +8,6 @@ html {
   }
 }
 
-.grey_box {
-  background-color: $light_grey;
-  padding: 25px;
-  border-radius: $border-radius;
-  box-shadow: 0 10px 20px rgba(213,197,206,0.07);
-}
-
-.white_bg {
-  background: #fff;
-  border-radius: $border-radius;
-  box-shadow: 0 10px 20px rgba(213,197,206,0.07);
-}
-
 .button {
   background-color: $brand;
 
@@ -37,6 +24,31 @@ html {
     }
   }
 }
+
+.grey_box, .pink_box {
+  background-color: $light_grey;
+  padding: 25px;
+  border-radius: $border-radius;
+  box-shadow: 0 10px 20px rgba(213,197,206,0.07);
+}
+
+.pink_box {
+  background-color: $brand;
+  color: #fff;
+
+  .button {
+    background-color: #fff;
+    color: $brand;
+  }
+}
+
+.white_bg {
+  background: #fff;
+  border-radius: $border-radius;
+  box-shadow: 0 10px 20px rgba(213,197,206,0.07);
+}
+
+
 .mb {
   margin-bottom: 15px !important;
 }
