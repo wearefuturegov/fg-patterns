@@ -21,11 +21,17 @@ html {
   &:active {
     background-color: darken($brand, 10%);
   }
+  &:focus {
+    outline: 3px solid rgba(21, 101, 192, 0.6);
+  }
   &.right {
     float: right;
     @include mobile {
       width: 100%;
     }
+  }
+  &.large {
+    font-size: 115%;
   }
 }
 
@@ -129,3 +135,10 @@ h2 {
   text-transform: uppercase;
 }
 
+body.services.confirmation {
+  .container.white_bg {
+    @include desktop {
+      min-height: 600px;
+    }
+  }
+}

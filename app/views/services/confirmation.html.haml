@@ -1,3 +1,9 @@
+.container.breadcrumbs
+  =link_to "Home", root_path
+  %span.arrow >
+  =link_to "Services", services_path
+  %span.arrow >
+  Add a new service
 .container.white_bg
   %h2 Thank you!
   %p
@@ -8,7 +14,5 @@
     If you have any other comments, queries or suggestions about LocalGov Patterns then you can email us at:
     %strong
       =mail_to ENV['ADMIN_EMAIL']
-  = link_to "Add another service", new_service_path, class: 'button'
-  %br
-  %br
-  = link_to "See the patterns", services_path, class: 'button'
+  = link_to "See the patterns", services_path, class: 'button float_left'
+  = link_to "Add another service", new_service_path, class: 'button right'
