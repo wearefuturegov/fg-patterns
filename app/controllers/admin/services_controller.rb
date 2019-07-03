@@ -1,6 +1,7 @@
 class Admin::ServicesController < Admin::BaseController
   def index
-    @services = Service.where(status: 'awaiting_approval').order(created_at: :desc)
+    @services_awaiting_approval = Service.where(status: 'awaiting_approval').order(created_at: :desc)
+    @live_services = Service.where(status: 'published').order(created_at: :desc)
   end
 
   def edit
@@ -20,6 +21,12 @@ class Admin::ServicesController < Admin::BaseController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @service = Service.find(params[:id])
+    @service.destroy
+    redirect_to admin_services_path
   end
 
   private

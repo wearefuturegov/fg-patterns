@@ -1,4 +1,6 @@
-%h3 Services awaiting approval
+%h3
+  = pluralize(@services_awaiting_approval.count, 'service')
+  awaiting approval
 
 %table
   %tr
@@ -11,7 +13,8 @@
     %th
       Date submitted
     %th
-  - @services.each do |service|
+    %th
+  - @services_awaiting_approval.each do |service|
     %tr
       %td
         = service.name
@@ -23,3 +26,36 @@
         = service.created_at.to_formatted_s(:short)
       %td
         = link_to "Moderate service", edit_admin_service_path(service)
+      %td
+        = link_to "Delete service", admin_service_path(service), method: :delete, data: { confirm: "Are you sure you want to delete the service #{service.name}?" }
+
+%h3
+  = pluralize(@live_services.count, 'service')
+  live services
+
+%table
+  %tr
+    %th
+      Name
+    %th
+      Added by
+    %th
+      Organisation
+    %th
+      Date submitted
+    %th
+    %th
+  - @live_services.each do |live_service|
+    %tr
+      %td
+        = live_service.name
+      %td
+        = live_service.suggester_name
+      %td
+        = live_service.suggester_organisation
+      %td
+        = live_service.created_at.to_formatted_s(:short)
+      %td
+        = link_to "Moderate service", edit_admin_service_path(live_service)
+      %td
+        = link_to "Delete service", admin_service_path(live_service), method: :delete, data: { confirm: "Are you sure you want to delete the service #{live_service.name}?" }
