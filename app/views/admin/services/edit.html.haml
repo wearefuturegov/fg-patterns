@@ -1,6 +1,11 @@
-%h3
-  Edit
-  = @service.name
+.container.breadcrumbs
+  =link_to "Services", admin_services_path
+  %span.arrow >
+  Edit service
+.container.white_bg
+  %h2
+    Edit
+    = @service.name
 
   = simple_form_for [:admin, @service] do |f|
 
