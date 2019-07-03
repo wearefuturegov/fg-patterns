@@ -1,6 +1,22 @@
-= f.input :name, :label => "Name of the service", :placeholder => "Enter name of the service", hint: "This might be what the service is called in your service directory, in your communications or on your website. But also think about what a user might be looking for from a service. For example, ‘Register a birth’, ‘Apply for a Blue Badge’ or ‘Report a flood’."
+.input.string.required.service_name.field_with_hint
+  = f.label :name, "Name of the service"
+  %span.hint
+    %p
+      This might be what the service is called in your service directory, in your communications or on your website. But also think about what a user might be looking for from a service.
+    %p
+      For example, ‘Register a birth’, ‘Apply for a Blue Badge’ or ‘Report a flood’."
+  = f.input :name, label: false
 
-= f.input :steps, :label => "Steps in the service", hint: "Describe the different steps that happen when someone uses this service. For example, to register a birth, a user would be asked to book an appointment and then pay for the service. Include details of any alternative steps that happen for different scenarios. Also, if a service (typically a non-transactional one) happens over a longer period of time, you might want to break this down as Step 01, Step 02. etc."
+.input.text.required.service_steps.field_with_hint
+  = f.label :steps, "Steps in the service"
+  %span.hint
+    %p
+      Describe the different steps that happen when someone uses this service. If a service (typically a non-transactional one) happens over a longer period of time, you might want to break this down as Step 01, Step 02. etc.
+    %p
+      Example of 'Register a birth' steps:
+    %p
+      Book an appointment > Pay
+  = f.input :steps, label: false
 
 .input.check_boxes.required.service_patterns.field_with_hint.convert_checkboxes
   #pattern_checkboxes
