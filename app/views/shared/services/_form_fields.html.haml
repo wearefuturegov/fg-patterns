@@ -6,7 +6,7 @@
   #pattern_checkboxes
     %div= f.label :pattern_ids, "Which patterns apply to this service?", required: true
     %span.hint
-      These are the common interactions that we can spot once we have identified the steps of a service. Things like ‘Check something’ or ‘Register for something’. A service can involve more than one pattern.
+      These are the common interactions that we can spot once we have identified the steps of a service. Things like ‘Check something’ or ‘Register for something’. You can select more than one pattern below.
     = f.collection_check_boxes(:pattern_ids, Pattern.all, :id, :name) do |builder|
       = builder.check_box
       .blocker
