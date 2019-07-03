@@ -3,8 +3,10 @@
   %span.arrow >
   =link_to "Services", services_path
   %span.arrow >
-  =@service.name
-  service
+  %span.only_mobile_inline This service
+  %span.no_mobile
+    =@service.name
+    service
 
 .container.white_bg#service_show
   %h1= @service.name

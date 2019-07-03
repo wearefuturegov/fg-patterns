@@ -20,6 +20,10 @@ header {
     height: 25px;
     background: image-url("fg_logo.svg") center center no-repeat;
     background-size: 100%;
+    @include mobile {
+      width: 145px;
+      height: 18px;
+    }
   }
 
   nav {

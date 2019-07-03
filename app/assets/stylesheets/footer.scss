@@ -13,7 +13,12 @@ footer {
       color: #fff;
     }
   }
-
+  .x {
+    display: inline-block;
+    @include mobile {
+      display: block;
+    }
+  }
   .fg_logo, .essex_logo {
     display: inline-block;
     margin: 0 10px;

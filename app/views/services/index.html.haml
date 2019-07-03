@@ -78,6 +78,8 @@
         .only_mobile.bold Organisation:
         - service.organisation_types.each do |org_type|
           = org_type
+        .only_mobile.link_like
+          View more
 
 .container.full_container
   = link_to "Add a new service", new_service_path, class: 'button right'

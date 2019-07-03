@@ -40,6 +40,9 @@ html {
   padding: 25px;
   border-radius: $border-radius;
   box-shadow: 0 10px 20px rgba(213,197,206,0.07);
+  @include mobile {
+    padding: 15px;
+  }
 }
 
 .pink_box {
@@ -107,6 +110,12 @@ h2 {
     display: block;
   }
 }
+.only_mobile_inline {
+  display: none;
+  @include mobile {
+    display: inline-block;
+  }
+}
 
 
 .breadcrumbs {
@@ -136,6 +145,11 @@ h2 {
 }
 
 body.services.confirmation {
+  @include mobile {
+    .button {
+      margin-bottom: 15px;
+    }
+  }
   .container.white_bg {
     @include desktop {
       min-height: 600px;

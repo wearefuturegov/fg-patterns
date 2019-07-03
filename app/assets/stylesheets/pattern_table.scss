@@ -197,6 +197,13 @@ a.not_pattern {
     a {
       margin-right: 15px;
     }
+
+    @include mobile {
+      float: none;
+      label {
+        text-align: left;
+      }
+    }
   }
   form {
     display: inline-block;
@@ -208,4 +215,9 @@ a.not_pattern {
   .single_pattern {
     font-size: 0.75em;
   }
+}
+
+.link_like {
+  color: $brand;
+  text-decoration: underline;
 }
