@@ -30,8 +30,7 @@
         = link_to "Delete service", admin_service_path(service), method: :delete, data: { confirm: "Are you sure you want to delete the service #{service.name}?" }
 
 %h3
-  = pluralize(@live_services.count, 'service')
-  live services
+  = pluralize(@live_services.count, 'live service')
 
 %table
   %tr
