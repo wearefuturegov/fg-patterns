@@ -75,28 +75,28 @@
       z-index: 10;
       position: inherit;
       &.check-something {
-        background: rgba($turqoise, 0.2);
+        background: rgba($turqoise, $lower_opacity);
       }
       &.register-for-something {
-        background: rgba($yellow, 0.2);
+        background: rgba($yellow, $lower_opacity);
       }
       &.tell-something {
-        background: rgba($purple, 0.2);
+        background: rgba($purple, $lower_opacity);
       }
       &.request-something {
-        background: rgba($blue, 0.2);
+        background: rgba($blue, $lower_opacity);
       }
       &.apply-for-something {
-        background: rgba($red, 0.2);
+        background: rgba($red, $lower_opacity);
       }
       &.book-something {
-        background: rgba($orange, 0.2);
+        background: rgba($orange, $lower_opacity);
       }
       &.pay-for-something {
-        background: rgba($dark_purple, 0.2);
+        background: rgba($dark_purple, $lower_opacity);
       }
       &.fg_brand {
-        background: rgba($brand, 0.2);
+        background: rgba($brand, $lower_opacity);
       }
     }
     &:hover + .blocker + span {

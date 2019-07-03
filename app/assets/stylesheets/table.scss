@@ -14,13 +14,6 @@
       min-height: 1px;
     }
 
-    .table__head {
-      text-transform: uppercase;
-      color: rgba($dark_gray, 0.8);
-      font-size: 0.75em;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
     &.data_row {
       background: #fff;
       border-radius: $border-radius;
@@ -82,5 +75,16 @@
         margin-top: 10px;
       }
     }
+  }
+}
+
+.table .table__head, body.services.index label {
+  text-transform: uppercase;
+  color: rgba($dark_gray, 0.8);
+  font-size: 0.75em;
+  font-weight: 600;
+  margin-bottom: 5px;
+  &.two_col {
+    text-align: right;
   }
 }
