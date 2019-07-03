@@ -1,4 +1,7 @@
 .table {
+  .float_left {
+    margin-top: 25px;
+  }
   .head_row {
     @include mobile {
       display: none;
