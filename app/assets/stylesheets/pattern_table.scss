@@ -17,6 +17,13 @@
   }
 }
 
+a.not_pattern {
+  &:hover {
+    color: #fff;
+    background-color: rgba($dark_gray, 1);
+  }
+}
+
 .restrict_full_width {
   max-width: 960px;
   h3 {

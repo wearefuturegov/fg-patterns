@@ -70,6 +70,7 @@ body.home.index {
     width: 100%;
     height: 165px;
     margin-bottom: 10px;
+    border-radius: $border-radius;
     @include mobile {
       height: 190px;
     }
