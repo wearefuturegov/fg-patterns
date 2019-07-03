@@ -31,3 +31,14 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        service:
+          attributes:
+            pattern_ids:
+              blank: "You must select at least one"
+            organisation_types:
+              blank: "You must select at least one"
+            transactional:
+              inclusion: "Please select one"
