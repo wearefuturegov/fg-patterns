@@ -8,3 +8,7 @@
     If you have any other comments, queries or suggestions about LocalGov Patterns then you can email us at:
     %strong
       =mail_to ENV['ADMIN_EMAIL']
+  = link_to "Add another service", new_service_path, class: 'button'
+  %br
+  %br
+  = link_to "See the patterns", services_path, class: 'button'

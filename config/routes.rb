@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'confirmation', to: 'services#confirmation'
   resources :services, only: [:new, :index, :create, :show]
 
   namespace :admin do

@@ -33,6 +33,9 @@ class ServicesController < ApplicationController
     end
   end
 
+  def confirmation
+  end
+
   def show
     @service = Service.find(params[:id])
   end
