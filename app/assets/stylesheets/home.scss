@@ -2,6 +2,9 @@ body.home.index {
   h1 {
     font-size: 3em;
     margin-bottom: 15px;
+    @include mobile {
+      font-size: 2em;
+    }
   }
   .large_p {
     font-size: 1.25em;
@@ -46,6 +49,19 @@ body.home.index {
 
 .blog {
   margin-bottom: 25px;
+  a {
+    display: block;
+    color: $black;
+    text-decoration: none;
+  }
+  h4 {
+    font-size: 100%;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 80%;
+    line-height: 1.25;
+  }
   .image {
     width: 100%;
     height: 165px;
