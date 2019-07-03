@@ -44,13 +44,13 @@
       - else
         = pluralize(@services.count, 'total service')
     #life_event_filter
-      - if @selected_life_event
-        = link_to "Clear", filter_by_pattern_path(@selected_pattern.slug)
       - if @selected_pattern
+        = link_to "Clear", filter_by_pattern_path(@selected_pattern.slug) if @selected_life_event
         = form_tag(filter_by_pattern_path(@selected_pattern.slug), method: :get) do
           = label_tag "Filter by life event"
           = select_tag "life_event_select", options_from_collection_for_select(@life_events, "id", "name", @selected_life_event.try(:id)), onchange: 'this.form.submit();', include_blank: "--Select a life event--"
       - else
+        = link_to "Clear", services_path if @selected_life_event
         = form_tag(services_path, method: :get) do
           = label_tag "Filter by life event"
           = select_tag "life_event_select", options_from_collection_for_select(@life_events, "id", "name", @selected_life_event.try(:id)), onchange: 'this.form.submit();', include_blank: "--Select a life event--"
