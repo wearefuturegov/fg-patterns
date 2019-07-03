@@ -9,9 +9,11 @@ class ServicesController < ApplicationController
 
     if @selected_life_event
       if @selected_pattern
-        @services = @selected_pattern.services.published.includes(:life_events).where(life_events: { id: params[:life_event_select] })
+        service_ids = @selected_pattern.services.includes(:life_events).where(life_events: { id: @selected_life_event.id }).select(:id).map{|service| service.id}
+        @services = @selected_pattern.services.published.includes(:life_events).where(id: service_ids)
       else
-        @services = Service.published.where(life_events: { id: params[:life_event_select] }).includes(:life_events)
+        service_ids = Service.published.includes(:life_events).where(life_events: { id: params[:life_event_select] }).map{|service| service.id}
+        @services = Service.published.includes(:life_events).where(id: service_ids)
       end
     else
       if @selected_pattern
