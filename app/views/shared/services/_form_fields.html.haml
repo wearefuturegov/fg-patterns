@@ -4,7 +4,7 @@
     %p
       This might be what the service is called in your service directory, in your communications or on your website. But also think about what a user might be looking for from a service.
     %p
-      For example, ‘Register a birth’, ‘Apply for a Blue Badge’ or ‘Report a flood’."
+      For example, ‘Register a birth’, ‘Apply for a Blue Badge’ or ‘Report a flood’.
   = f.input :name, label: false
 
 .input.text.required.service_steps.field_with_hint
@@ -13,16 +13,17 @@
     %p
       Describe the different steps that happen when someone uses this service. If a service (typically a non-transactional one) happens over a longer period of time, you might want to break this down as Step 01, Step 02. etc.
     %p
-      Example of 'Register a birth' steps:
-    %p
-      Book an appointment > Pay
+      Example of 'Register a birth' steps: Book an appointment > Pay
   = f.input :steps, label: false
 
 .input.check_boxes.required.service_patterns.field_with_hint.convert_checkboxes
   #pattern_checkboxes
     %div= f.label :pattern_ids, "Which patterns apply to this service?", required: true
     %span.hint
-      These are the common interactions that we can spot once we have identified the steps of a service. Things like ‘Check something’ or ‘Register for something’. You can select more than one pattern below.
+      %p
+        These are the common interactions that we can spot once we have identified the steps of a service. Things like ‘Check something’ or ‘Register for something’.
+      %p
+        You can select more than one pattern below.
     = f.collection_check_boxes(:pattern_ids, Pattern.all, :id, :name) do |builder|
       = builder.check_box
       .blocker
@@ -42,9 +43,14 @@
 .input.check_boxes.required.service_life_event_ids.field_with_hint.convert_checkboxes
   %div= f.label :life_event_ids, "Which life events apply to this service? (optional)", required: true
   %span.hint
-    This is a new way of considering a service in relation to life events of a user (and as such it’s a provisional list that builds on
-    = link_to "this LGA example", "https://standards.esd.org.uk/?uri=list%2FlifeEvents", target: '_blank'
-    ). For example, ‘Registering a birth’ or ‘Planning a naming ceremony’ could be grouped together under the life event of ‘Having a baby’, while applying for employment could be under ‘Getting a Job’. Select all that apply.
+    %p
+      This is a new way of considering a service in relation to life events of a user (and as such it’s a provisional list that builds on
+      = link_to "this LGA example", "https://standards.esd.org.uk/?uri=list%2FlifeEvents", target: '_blank'
+      ).
+    %p
+      For example, ‘Registering a birth’ or ‘Planning a naming ceremony’ could be grouped together under the life event of ‘Having a baby’, while applying for employment could be under ‘Getting a Job’.
+    %p
+      Select all that apply.
   = f.collection_check_boxes(:life_event_ids, LifeEvent.all, :id, :name) do |builder|
     = builder.check_box
     .blocker
@@ -56,7 +62,10 @@
 .input.check_boxes.required.service_organisation_types.field_with_hint.convert_checkboxes
   %div= f.label :organisation_types, "Which organisation types is this service found in?", required: true
   %span.hint
-    We’d like to get a sense of where different services sit in different types of organisations. For example, you can tell us whether a service is in a county, borough or district council. Services can sit in more than one organisation.
+    %p
+      We’d like to get a sense of where different services sit in different types of organisations. For example, you can tell us whether a service is in a county, borough or district council. 
+    %p
+      Services can sit in more than one organisation.
   = f.collection_check_boxes(:organisation_types, Service.organisation_types, :first, :last, include_hidden: false) do |builder|
     = builder.check_box
     .blocker
