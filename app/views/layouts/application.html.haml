@@ -1,7 +1,6 @@
 !!!
 %html
   %head
-    = render 'layouts/google_analytics'
     %title Service patterns for local government | LocalGov Patterns | FutureGov
     = csrf_meta_tags
     = csp_meta_tag
@@ -41,7 +40,7 @@
     = stylesheet_link_tag "https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"
     = javascript_include_tag "https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
     :javascript
-      window.addEventListener("load", function(){
+      window.addEventListener("turbolinks:load", function(){
       window.cookieconsent.initialise({
         "palette": {
           "popup": {
@@ -63,6 +62,7 @@
 
   = render 'layouts/fg_header'
   %body{:class => page_class}
+    = render 'layouts/google_analytics'
     - if flash[:notice]
       %div.notice
         = flash[:notice]
