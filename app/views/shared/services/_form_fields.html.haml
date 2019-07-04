@@ -21,7 +21,7 @@
     %div= f.label :pattern_ids, "Which patterns apply to this service?", required: true
     %span.hint
       %p
-        These are the common interactions and tasks have been identified as steps of a service. For example, ‘Check something’ or ‘Register for something’.
+        These are common interactions and tasks that have been identified as steps of this service. For example, ‘Check something’ or ‘Register for something’.
       %p
         You can select more than one pattern below.
     = f.collection_check_boxes(:pattern_ids, Pattern.all, :id, :name) do |builder|
