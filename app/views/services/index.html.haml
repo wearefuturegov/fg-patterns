@@ -32,11 +32,10 @@
           Alternatively, if you want to amend or comment on existing services, you can email us directly at
           %strong
             =mail_to ENV['ADMIN_EMAIL']
-
+    #pattern_table
     = link_to "Add a new service", new_service_path, class: 'button'
 
-#pattern_table
-%br
+
 .pattern_table.table.container.full_container
   .full_width
     %h2.float_left
