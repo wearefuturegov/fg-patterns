@@ -27,16 +27,16 @@ header {
   }
 
   nav {
-    @include tablet {
+    .navigation-menu {
       display: none;
-    }
-    @include mobile {
-      display: none;
+      @media (min-width: 960px) {
+        display: block !important;
+      }
     }
     .nav-link {
       a {
         color: $black;
-        font-size: 0.95em;
+        font-size: 1.2em;
         display: inline;
         line-height: 30px;
         text-decoration: none;
@@ -44,9 +44,16 @@ header {
         overflow: hidden;
         padding-right: 0.4em;
         padding-left: 0.4em;
-        margin-right: $space-between;
+        margin-right: 6px;
         text-align: right;
         float: right;
+        margin-top: 15px;
+
+        @media (min-width: 960px) {
+          margin-right: $space-between;
+          margin-top: 0;
+          font-size: 0.95em;
+        }
 
         &.active {
           font-weight: 600;
@@ -54,7 +61,9 @@ header {
       }
       &:first-child {
         a {
-          margin-right: 0
+          @media (min-width: 960px) {
+            margin-right: 0;
+          }
         }
       }
     }
@@ -62,12 +71,22 @@ header {
       margin-right: $space-between;
     }
     .divider {
-      display: block;
+      display: none;
       width: 1px;
       height: 25px;
       margin: 3px $space-between 0px 0px;
       float: right;
       background-color: #333;
+      @media (min-width: 960px) {
+        display: block;
+      }
+    }
+  }
+  .two_col {
+    @include grid-column(12, $mobile_grid);
+
+    @media (min-width: 960px) {
+      @include grid-column(2);
     }
   }
 }
@@ -79,11 +98,19 @@ header {
 }
 
 .nav_container {
-  .two_col {
-    @include grid-column(12, $mobile_grid);
+  float: right;
+  @media (min-width: 960px) {
+    float: none;
+  }
+}
 
-    @include desktop {
-      @include grid-column(10);
-    }
+.navigation-menu-button {
+  color: $black;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 120%;
+  float: right;
+  @media (min-width: 960px) {
+    display: none;
   }
 }
