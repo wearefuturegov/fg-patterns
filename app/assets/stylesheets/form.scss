@@ -76,6 +76,9 @@
 
       @include mobile {
         height: 32px;
+        border-radius: 0px;
+        margin-left: -1px;
+        margin-top: -1px;
       }
     }
     & + .blocker + span {
