@@ -221,3 +221,9 @@ a.not_pattern {
   color: $brand;
   text-decoration: underline;
 }
+
+#pattern_description {
+  h2 {
+    margin-top: 15px;
+  }
+}
