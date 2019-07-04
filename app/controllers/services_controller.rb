@@ -50,7 +50,7 @@ class ServicesController < ApplicationController
     else
       @life_events = LifeEvent.order(:name)
     end
-    @patterns = Pattern.all
+    @patterns = Pattern.order(:id)
 
     if is_integer? params[:life_event_select]
       @selected_life_event = LifeEvent.find(params[:life_event_select])
