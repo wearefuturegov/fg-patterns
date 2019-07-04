@@ -76,8 +76,11 @@
             = life_event.name
       .table__data.two_col
         .only_mobile.bold Organisation:
-        - service.organisation_types.each do |org_type|
-          = org_type
+        - service.organisation_types.each_with_index do |org_type, index|
+          - if index == service.organisation_types.count - 1
+            = org_type
+          - else
+            = org_type + ", "
         .only_mobile.link_like
           View more
 

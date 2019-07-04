@@ -25,8 +25,11 @@
       = link_to life_event.name, services_path(life_event_select: life_event.id, anchor: 'pattern_table'), class: "single_pattern not_pattern large_pattern"
 
   %p.bold Organisation type
-  - @service.organisation_types.each do |org_type|
-    = org_type
+  - @service.organisation_types.each_with_index do |org_type, index|
+    - if index == @service.organisation_types.count - 1
+      = org_type
+    - else
+      = org_type + ", "
 
   %p.bold Transactional
   %p
