@@ -25,6 +25,12 @@ body.home.index {
   .accord-cont {
     padding-top: 10px;
   }
+  .two_thirds {
+    padding-right: 25px;
+    @include hd-desktop {
+      padding-right: 50px;
+    }
+  }
 }
 
 .centre_text {
