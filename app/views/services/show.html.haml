@@ -12,7 +12,7 @@
   %h1= @service.name
 
   %p.bold Steps
-  %p= @service.steps
+  %p= simple_format(@service.steps)
 
   %p.bold Patterns
   #pattern_links
