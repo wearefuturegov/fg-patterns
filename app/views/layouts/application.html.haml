@@ -24,6 +24,29 @@
     %link{:href => "icons/favicon-96x96.png", :rel => "icon", :sizes => "96x96", :type => "image/png"}/
     %link{:href => "icons/favicon-16x16.png", :rel => "icon", :sizes => "16x16", :type => "image/png"}/
 
+    = stylesheet_link_tag "https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"
+    = javascript_include_tag "https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
+    :javascript
+      window.addEventListener("load", function(){
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#170710",
+            "text": "#ffffff"
+          },
+          "button": {
+            "background": "#ffffff",
+            "text": "#170710"
+          }
+        },
+        "theme": "classic",
+        "position": "bottom-right",
+        "content": {
+          "message": "This website uses cookies. In order to continually improve this site, we remember and store information about how you use it  to ensure you get the best experience.",
+          "href": "http://wearefuturegov.com/products/data_protection"
+        }
+      })});
+
   = render 'layouts/fg_header'
   %body{:class => page_class}
     - if flash[:notice]
