@@ -25,7 +25,7 @@ a.not_pattern {
 }
 
 .restrict_full_width {
-  max-width: 960px;
+  max-width: $max_width;
   h3 {
     margin-top: 25px;
   }
