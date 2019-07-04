@@ -22,7 +22,7 @@
   - if @service.life_events.any?
     %p.bold Life events
     - @service.life_events.each do |life_event|
-      = link_to life_event.name, services_path(life_event_select: life_event.id), class: "single_pattern not_pattern large_pattern"
+      = link_to life_event.name, services_path(life_event_select: life_event.id, anchor: 'pattern_table'), class: "single_pattern not_pattern large_pattern"
 
   %p.bold Organisation type
   - @service.organisation_types.each do |org_type|
