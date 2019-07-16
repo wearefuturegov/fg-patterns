@@ -10,7 +10,7 @@ FactoryBot.define do
     steps { "met fanny pack cray vice, single-origin coffee vape raw > Lorem ipsum dolor amet fanny pack cray vice" }
     patterns { [Pattern.first, Pattern.last] }
     life_events { [LifeEvent.first, LifeEvent.last]}
-    organisation_types { [Service.organisation_types.first, Service.organisation_types.last] }
+    organisation_types { [Service.organisation_types[0].first, Service.organisation_types[0].last] }
     transactional { true }
     suggester_name { "Sir Vice" }
     suggester_email { "exampe@wearefuturegov.com" }
