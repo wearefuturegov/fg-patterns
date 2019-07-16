@@ -12,14 +12,20 @@ class Admin::ServicesController < Admin::BaseController
     @service = Service.find(params[:id])
     new_service = (@service.status == 'awaiting_approval' ? true : false)
 
-    if @service.update_attributes(service_params.merge(status: 'published'))
-      if new_service
-        ServiceMailer.service_approved(@service).deliver
+    if params[:commit] == "Save but don't publish"
+      @service.update_attributes(service_params)
+      redirect_to admin_services_path
+
+    elsif params[:commit] == "Publish this service"
+      if @service.update_attributes(service_params.merge(status: 'published'))
+        if new_service
+          ServiceMailer.service_approved(@service).deliver
+        end
+        flash[:notice] = "Service #{@service.name} was published"
+        redirect_to services_path
+      else
+        render 'edit'
       end
-      flash[:notice] = "Service #{@service.name} was published"
-      redirect_to services_path
-    else
-      render 'edit'
     end
   end
 

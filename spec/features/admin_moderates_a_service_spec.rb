@@ -27,6 +27,13 @@ RSpec.feature "Service moderation", :type => :feature do
     expect(page).to have_text("Edit #{service.name}")
     fill_in 'Name', with: 'Name of new service edited'
 
+    click_button "Save but don't publish"
+    expect(page).to have_text('1 service awaiting approval')
+    first('table').click_link 'Moderate service'
+    service.reload
+    expect(service.status).to eq('awaiting_approval')
+    expect(service.name).to eq('Name of new service edited')
+
     click_button 'Publish this service'
     service.reload
     expect(page).to have_text("Service #{service.name} was published")
