@@ -75,7 +75,7 @@
     = f.error :organisation_types
 
 
-= f.input :transactional, :label => "Is this service transactional?", as: :select, collection: [['Yes', true], ['No', false]], include_blank: true, hint: "A transactional service is a direct interaction between the council and a service user. It should be low complexity, and typically won’t require any additional or face-to-face interventions. A non-transactional service is typically made up of multiple and different types of interactions over a longer period of time."
+= f.input :transactional, :label => "Is this service transactional?", as: :radio_buttons, hint: "A transactional service is a direct interaction between the council and a service user. It should be low complexity, and typically won’t require any additional or face-to-face interventions. A non-transactional service is typically made up of multiple and different types of interactions over a longer period of time."
 
 %br
 %fieldset#your_details
