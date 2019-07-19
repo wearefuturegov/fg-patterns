@@ -78,6 +78,7 @@ body.index.services, body.services.new, body.services.edit, body.services.create
 }
 
 .container {
+  max-width: 950px;
   &.full_container {
     padding-left: 0;
     padding-right: 0;
@@ -117,9 +118,15 @@ h2 {
   @include mobile {
     display: block;
   }
+  @include tablet {
+    display: block;
+  }
 }
 .only_mobile_inline {
   display: none;
+  @include tablet {
+    display: inline-block;
+  }
   @include mobile {
     display: inline-block;
   }
