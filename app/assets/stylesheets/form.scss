@@ -143,6 +143,7 @@
     &:checked + .blocker + span {
       background: darken($light_gray, 50%);
       color: #fff;
+      box-shadow: 0 0 0 1px #e53094;
       &.check-something {
         background: rgba($turqoise, 1);
       }
