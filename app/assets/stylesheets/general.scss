@@ -7,6 +7,13 @@ html {
     line-height: 1.5;
   }
 }
+.notice {
+  font-weight: bold;
+  font-style: italic;
+  background: $brand;
+  color: #fff;
+  padding: 25px;
+}
 .float_left {
   float: left;
 }

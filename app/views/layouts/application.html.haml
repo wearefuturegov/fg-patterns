@@ -64,7 +64,8 @@
   %body{:class => page_class}
     = render 'layouts/google_analytics'
     - if flash[:notice]
-      %div.notice
-        = flash[:notice]
+      %div.container
+        %div.notice
+          = flash[:notice]
     = yield
   = render 'layouts/footer'
