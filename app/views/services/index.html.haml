@@ -74,7 +74,7 @@
         - service.life_events.each do |life_event|
           .single_pattern.not_pattern
             = life_event.name
-      .table__data.two_col
+      .table__data.two_col.organisation
         .only_mobile.bold Organisation:
         - service.organisation_types.each_with_index do |org_type, index|
           - if index == service.organisation_types.count - 1

@@ -217,6 +217,12 @@ a.not_pattern {
   }
 }
 
+.organisation {
+  font-size: 0.75em;
+  .only_mobile {
+    font-size: 16px;
+  }
+}
 .link_like {
   color: $brand;
   text-decoration: underline;
