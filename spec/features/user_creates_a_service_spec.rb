@@ -30,7 +30,7 @@ RSpec.feature "Service creation", :type => :feature do
     life_event_checkbox = within('.service_life_event_ids') { find("input[type='checkbox']", match: :first) }
     life_event_checkbox.set(:true)
 
-    select 'Yes', from: :transactional
+    choose('service_transactional_true')
 
     click_button 'Add this service'
 
