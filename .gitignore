@@ -26,6 +26,6 @@
 /config/master.key
 
 # Ignore database.yml file.
-config/database.yml
+#config/database.yml
 
 .env
