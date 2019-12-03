@@ -1,24 +1,27 @@
-# README
+# Fg-Patterns
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A shared library of service patterns for local government. It:
 
-Things you may want to cover:
+* has a filterable database of patterns and services
+* allows for users to submit new services
 
-* Ruby version
+Built with Ruby (2.6.0) on Rails (5.2.3).
 
-* System dependencies
+## Prerequisites
 
-* Configuration
+* Postgres
 
-* Database creation
+## Running it locally
 
-* Database initialization
+1. Clone repo and run `bundle install`
+2. Create environment file `cp .env.example .env`
+2. Set up database by running `rake db:create`, `rake db:migrate` and then `rake db:seed`
+3. Then you should be good to run a server with `rails s`
 
-* How to run the test suite
+# Running it on the web
 
-* Services (job queues, cache servers, search engines, etc.)
+We use heroku
 
-* Deployment instructions
+# Environment config
 
-* ...
+* To send emails you will need to set a `SENDGRID_API_KEY` and an `ADMIN_EMAIL` address.
