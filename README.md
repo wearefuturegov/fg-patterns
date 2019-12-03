@@ -19,11 +19,11 @@ Built with Rails (5.2.3).
 2. Set up database by running `rake db:create`, `rake db:migrate` and then `rake db:seed`
 3. Then you should be good to run a server with `rails s`
 
-# Running it on the web
+## Running it on the web
 
 We use Heroku.
 
-# Environment config
+## Environment config
 
 * To send emails you will need to set a `SENDGRID_API_KEY` and an `ADMIN_EMAIL` address.
 * For login to the admin section you can set `HTTP_USERNAME` and `HTTP_PASSWORD`.
