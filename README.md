@@ -16,8 +16,8 @@ Built with Rails (5.2.3).
 
 1. Clone repo and run `bundle install`
 2. Create environment file `cp .env.example .env`
-2. Set up database by running `rake db:create`, `rake db:migrate` and then `rake db:seed`
-3. Then you should be good to run a server with `rails s`
+3. Set up database by running `rake db:create`, `rake db:migrate` and then `rake db:seed`
+4. Then you should be good to run a server with `rails s`
 
 ## Running it on the web
 
